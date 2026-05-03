@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Coulee Coffee Co. — Small-batch specialty coffee roasted in Lethbridge, AB</title>
+<meta name="description" content="A small-batch specialty coffee roaster in Lethbridge, Alberta. Single origins, blends, and subscriptions. Roasted Tuesdays and Fridays." />
+<meta property="og:title" content="Coulee Coffee Co." />
+<meta property="og:description" content="Small-batch specialty coffee roasted in Lethbridge, AB." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Coulee Coffee Co.",
+  "telephone": "+1-403-555-0144",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "418 5th Street South",
+    "addressLocality": "Lethbridge",
+    "addressRegion": "AB",
+    "postalCode": "T1J 2B6",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.6936, "longitude": -112.8423 },
+  "priceRange": "$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Espresso palette */
+    --night: #0f0d0b;
+    --espresso: #1a1512;
+    --grounds: #2a221d;
+    --rule: #3a302a;
+    --rule-soft: #2a221d;
+
+    /* Cream / warm contrast */
+    --cream: #f4ead5;
+    --cream-soft: #ebe0c8;
+    --paper-mute: #c4b89a;
+    --paper-faint: #8a7f68;
+
+    /* Accents */
+    --crimson: #c4402d;
+    --crimson-deep: #8a2a1c;
+    --crimson-glow: rgba(196, 64, 45, 0.25);
+    --rust: #d56b3f;
+    --copper: #b87a4c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--night);
+    color: var(--cream);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay - subtle paper texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.85 0 0 0 0 0.7 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: screen;
+  }
+
+  .display { font-family: 'Fraunces', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* ═══════ DEMO BANNER ═══════ */
+  .demo-banner {
+    position: relative;
+    z-index: 10;
+    background: var(--crimson);
+    color: var(--cream);
+    padding: 0.7rem 1rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .demo-banner b { color: #ffe5b3; font-weight: 700; }
+  .demo-banner a { color: var(--cream); text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ═══════ NAV ═══════ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 13, 11, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--cream);
+    transition: opacity 0.2s;
+  }
+  .logo:hover { opacity: 0.8; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--crimson);
+    color: var(--cream);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    transform: rotate(-6deg);
+  }
+  .logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  nav ul { display: flex; list-style: none; gap: 2.2rem; align-items: center; }
+  nav a {
+    text-decoration: none;
+    color: var(--paper-mute);
+    font-size: 0.92rem;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--cream); }
+
+  .nav-cta {
+    background: var(--crimson);
+    color: var(--cream) !important;
+    padding: 0.6rem 1.3rem;
+    border-radius: 99px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--crimson-deep); transform: translateY(-1px); }
+
+  /* ═══════ MARQUEE ═══════ */
+  .marquee {
+    background: var(--espresso);
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    padding: 0.85rem 0;
+    white-space: nowrap;
+    animation: marquee 35s linear infinite;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--paper-mute);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .marquee-item::after {
+    content: "✦";
+    color: var(--crimson);
+    font-size: 0.7rem;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ═══════ HERO ═══════ */
+  .hero {
+    padding: 5rem 2.5rem 6rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--crimson);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--crimson);
+  }
+
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: clamp(3.2rem, 11vw, 11rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    color: var(--cream);
+    margin-bottom: 0;
+  }
+  h1.headline .ital {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--crimson);
+    display: inline-block;
+    transform: skewX(-2deg);
+  }
+  h1.headline .stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.18em;
+    color: var(--paper-mute);
+    letter-spacing: 0.2em;
+    vertical-align: super;
+    margin-left: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .hero-bottom {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .lede {
+    max-width: 38rem;
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: var(--cream-soft);
+  }
+  .lede em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--rust);
+    font-weight: 500;
+  }
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: right;
+  }
+  .stat {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--paper-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .stat .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--crimson);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  /* ═══════ ROASTING NOW ═══════ */
+  .roasting-section {
+    padding: 7rem 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .section-head {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--crimson);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+  .section-head h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--crimson);
+  }
+  .section-aside {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--paper-mute);
+    max-width: 24rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: right;
+  }
+  @media (max-width: 760px) {
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .section-aside { text-align: left; }
+  }
+
+  .coffees-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .coffee-card {
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+  }
+  .coffee-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--crimson);
+  }
+  .coffee-card:hover .bag-shape { transform: rotate(-2deg) scale(1.04); }
+
+  .coffee-bag {
+    aspect-ratio: 4 / 3;
+    background: var(--grounds);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .coffee-bag::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(196, 64, 45, 0.08), transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(184, 122, 76, 0.1), transparent 50%);
+  }
+  .bag-shape {
+    width: 50%;
+    aspect-ratio: 3 / 4;
+    background: var(--cream);
+    border-radius: 4px 4px 8px 8px;
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem 0.8rem;
+    text-align: center;
+  }
+  .bag-shape::before {
+    content: "";
+    position: absolute;
+    top: -6px; left: 8%; right: 8%;
+    height: 12px;
+    background: var(--cream);
+    border: 1px solid var(--paper-mute);
+    border-radius: 4px 4px 0 0;
+  }
+  .bag-shape .bag-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--crimson);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .bag-shape .bag-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--night);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .bag-shape .bag-region {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--copper);
+  }
+  .bag-shape .bag-bottom-stripe {
+    position: absolute;
+    bottom: 12%;
+    left: 0; right: 0;
+    height: 6px;
+    background: var(--crimson);
+  }
+
+  .coffee-info {
+    padding: 1.8rem 1.8rem 2rem;
+  }
+  .coffee-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--paper-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .coffee-info h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    color: var(--cream);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.3rem;
+  }
+  .coffee-info h3 em {
+    font-style: italic;
+    color: var(--crimson);
+    font-weight: 400;
+  }
+  .coffee-info .coffee-region {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--rust);
+    font-size: 1.02rem;
+    margin-bottom: 1rem;
+  }
+  .coffee-info .notes {
+    color: var(--cream-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.55;
+  }
+  .coffee-info .specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 1.2rem;
+  }
+  .spec {
+    text-align: center;
+  }
+  .spec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--paper-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .spec-value {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--cream);
+    font-size: 1rem;
+  }
+  .coffee-info .row-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .coffee-info .price {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--crimson);
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .coffee-info .price small { font-weight: 400; color: var(--paper-mute); font-size: 0.78rem; margin-left: 0.4rem; }
+  .coffee-info .order-link {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--paper-faint);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .coffee-info .order-link:hover {
+    color: var(--crimson);
+    border-bottom-color: var(--crimson);
+  }
+
+  /* ═══════ STORY SECTION ═══════ */
+  .story-section {
+    padding: 8rem 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .story-image {
+    aspect-ratio: 4/5;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(196, 64, 45, 0.4), transparent 55%),
+      radial-gradient(ellipse at 70% 70%, rgba(213, 107, 63, 0.3), transparent 55%),
+      linear-gradient(135deg, #2a221d 0%, #1a1512 100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .story-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='40' r='1.5' fill='%23c4402d' opacity='0.4'/><circle cx='65' cy='35' r='1' fill='%23d56b3f' opacity='0.5'/><circle cx='25' cy='65' r='2' fill='%23b87a4c' opacity='0.4'/><circle cx='70' cy='75' r='1.2' fill='%23c4402d' opacity='0.5'/><circle cx='50' cy='50' r='1.8' fill='%23d56b3f' opacity='0.6'/><circle cx='80' cy='55' r='1' fill='%23c4402d' opacity='0.4'/><circle cx='15' cy='80' r='1.5' fill='%23b87a4c' opacity='0.5'/></svg>");
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+  }
+  .story-image .stamp {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--cream);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: rgba(15, 13, 11, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.7rem;
+    border-radius: 99px;
+    border: 1px solid var(--rule);
+  }
+  .story-content h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    margin-bottom: 2rem;
+  }
+  .story-content h2 em {
+    font-style: italic;
+    color: var(--crimson);
+    font-weight: 400;
+  }
+  .story-content p {
+    color: var(--cream-soft);
+    line-height: 1.7;
+    margin-bottom: 1.4rem;
+    font-size: 1.05rem;
+  }
+  .story-content p:first-of-type::first-letter {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3.4em;
+    float: left;
+    line-height: 0.85;
+    margin: 0.05em 0.1em -0.1em 0;
+    color: var(--crimson);
+  }
+  .story-content .signoff {
+    margin-top: 2rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--rust);
+    font-size: 1.05rem;
+  }
+
+  /* ═══════ SUBSCRIPTION FLOW ═══════ */
+  .subscribe-section {
+    padding: 8rem 2.5rem;
+    background: linear-gradient(180deg, var(--night) 0%, var(--espresso) 100%);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+  .subscribe-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .subscribe-section .section-head { justify-content: center; flex-direction: column; align-items: center; text-align: center; }
+  .subscribe-section h2 {
+    text-align: center;
+  }
+
+  .order-card {
+    background: var(--night);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    max-width: 760px;
+    margin: 4rem auto 0;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .order-progress {
+    display: flex;
+    background: var(--espresso);
+    border-bottom: 1px solid var(--rule);
+  }
+  .order-progress .step {
+    flex: 1;
+    padding: 1rem 0.6rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--paper-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-right: 1px solid var(--rule);
+    transition: all 0.3s;
+  }
+  .order-progress .step:last-child { border-right: none; }
+  .order-progress .step.active {
+    color: var(--cream);
+    background: var(--night);
+  }
+  .order-progress .step.complete {
+    color: var(--crimson);
+  }
+  .order-progress .step .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--crimson);
+    margin-right: 0.3rem;
+  }
+
+  .order-body {
+    padding: 3rem 2.5rem;
+    min-height: 380px;
+  }
+  .order-step { display: none; }
+  .order-step.active { display: block; animation: stepIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes stepIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .step-title em {
+    font-style: italic;
+    color: var(--crimson);
+    font-weight: 400;
+  }
+  .step-sub {
+    color: var(--paper-mute);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Coffee selection */
+  .coffee-pick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+  .coffee-pick {
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    color: var(--cream);
+    font-family: inherit;
+    width: 100%;
+  }
+  .coffee-pick:hover { border-color: var(--paper-mute); }
+  .coffee-pick.selected {
+    border-color: var(--crimson);
+    background: rgba(196, 64, 45, 0.1);
+  }
+  .coffee-pick .pick-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+  .coffee-pick .pick-region {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--rust);
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+  }
+  .coffee-pick .pick-notes {
+    color: var(--paper-mute);
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  /* Option pickers */
+  .option-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+  .option-row.two { grid-template-columns: repeat(2, 1fr); }
+  .opt {
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1rem 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    color: var(--cream);
+    font-family: inherit;
+  }
+  .opt:hover { border-color: var(--paper-mute); }
+  .opt.selected {
+    border-color: var(--crimson);
+    background: rgba(196, 64, 45, 0.15);
+  }
+  .opt .opt-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .opt .opt-meta {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--paper-mute);
+    margin-top: 0.25rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .opt.selected .opt-meta { color: var(--rust); }
+
+  .field-label {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--rust);
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  .field-block { margin-bottom: 1.8rem; }
+
+  /* Subscription frequency */
+  .freq-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 99px;
+    padding: 0.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .freq-option {
+    padding: 0.7rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 99px;
+    font-size: 0.95rem;
+    color: var(--paper-mute);
+    transition: all 0.25s;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  .freq-option.active {
+    background: var(--crimson);
+    color: var(--cream);
+  }
+
+  .sub-discount-note {
+    background: rgba(196, 64, 45, 0.1);
+    border: 1px solid var(--crimson-deep);
+    color: var(--cream);
+    padding: 0.9rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .sub-discount-note::before {
+    content: "✦";
+    color: var(--crimson);
+    font-size: 1.2rem;
+  }
+
+  /* Confirmation summary */
+  .summary-box {
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+  .summary-line:last-child { border-bottom: none; }
+  .summary-line .label { color: var(--paper-mute); }
+  .summary-line .value { color: var(--cream); font-weight: 500; }
+  .summary-line.total { padding-top: 1rem; }
+  .summary-line.total .value {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--crimson);
+  }
+
+  /* Order footer */
+  .order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2.5rem;
+    background: var(--espresso);
+    border-top: 1px solid var(--rule);
+  }
+  .btn-back {
+    background: transparent;
+    border: none;
+    color: var(--paper-mute);
+    font-family: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .btn-back:hover:not(:disabled) { color: var(--cream); }
+  .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn-next {
+    background: var(--crimson);
+    color: var(--cream);
+    border: none;
+    padding: 0.85rem 1.7rem;
+    border-radius: 99px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  .btn-next::after { content: "→"; transition: transform 0.2s; }
+  .btn-next:hover:not(:disabled) { background: var(--crimson-deep); }
+  .btn-next:hover:not(:disabled)::after { transform: translateX(3px); }
+  .btn-next:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* Demo payment banner */
+  .demo-payment-banner {
+    background: rgba(196, 64, 45, 0.12);
+    border: 1px dashed var(--crimson);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  .demo-payment-banner .demo-stamp {
+    background: var(--crimson);
+    color: var(--cream);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    padding: 0.35rem 0.6rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+    font-weight: 600;
+    transform: rotate(-3deg);
+    margin-top: 0.1rem;
+  }
+  .demo-payment-banner p {
+    color: var(--cream-soft);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .demo-payment-banner strong {
+    color: var(--cream);
+    font-weight: 600;
+  }
+  .payment-summary-mini {
+    background: var(--espresso);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .payment-summary-mini .summary-line {
+    padding: 0.4rem 0;
+  }
+  .payment-summary-mini .summary-line:last-child {
+    border-bottom: none;
+  }
+  .card-row-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Order complete */
+  .order-complete {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  .order-complete .stamp-circle {
+    width: 90px; height: 90px;
+    margin: 0 auto 1.6rem;
+    border-radius: 50%;
+    background: var(--crimson);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 2.4rem;
+    transform: rotate(-7deg);
+    box-shadow: 0 18px 40px -10px rgba(196, 64, 45, 0.4);
+  }
+  .order-complete h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+  }
+  .order-complete h3 em {
+    font-style: italic;
+    color: var(--crimson);
+    font-weight: 400;
+  }
+  .order-complete p {
+    color: var(--cream-soft);
+    margin-bottom: 0.4rem;
+  }
+  .order-complete .order-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--paper-mute);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  /* ═══════ FOOTER ═══════ */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 5rem 2.5rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-mega {
+    max-width: 1300px;
+    margin: 0 auto 4rem;
+  }
+  .footer-mega .megatype {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(4rem, 14vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: var(--crimson);
+    margin-bottom: 1.5rem;
+  }
+  .footer-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-col h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--crimson);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li {
+    padding: 0.3rem 0;
+    color: var(--cream-soft);
+    font-size: 0.92rem;
+  }
+  .footer-col a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--crimson); }
+  .footer-brand p {
+    color: var(--paper-mute);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 26rem;
+    margin-top: 1rem;
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--paper-faint);
+    gap: 1rem;
+  }
+  .built-by a {
+    color: var(--crimson);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 64, 45, 0.4);
+  }
+
+  /* ═══════ RESPONSIVE ═══════ */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.4rem; }
+    nav ul li:nth-child(1), nav ul li:nth-child(2), nav ul li:nth-child(3) { display: none; }
+    .hero { padding: 3rem 1.4rem 4rem; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-stats { text-align: left; align-items: flex-start; }
+    .stat { justify-content: flex-start; }
+    .roasting-section, .story-section, .subscribe-section { padding: 4rem 1.4rem; }
+    .coffees-grid { grid-template-columns: 1fr; }
+    .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .order-body { padding: 2rem 1.4rem; }
+    .order-footer { padding: 1rem 1.4rem; }
+    .order-progress .step { font-size: 0.6rem; padding: 0.6rem 0.2rem; letter-spacing: 0.02em; }
+    .order-progress .step .num { display: block; margin: 0 0 0.15rem; }
+    .demo-payment-banner { flex-direction: column; gap: 0.7rem; }
+    .demo-payment-banner .demo-stamp { align-self: flex-start; }
+    .card-row-three { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .coffee-pick-grid { grid-template-columns: 1fr; }
+    .option-row { grid-template-columns: 1fr 1fr; }
+    .option-row.two { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; }
+    footer { padding: 3rem 1.4rem 2rem; }
+  }
+  @media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  <b>★ Demo / concept site</b> &nbsp;·&nbsp; Coulee Coffee Co. is not a real business &nbsp;·&nbsp; Built by <a href="https://lushand.co" target="_blank" rel="noopener">Lush &amp; Co.</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-icon">C</span>
+    <span class="logo-text">Coulee Coffee Co.</span>
+  </a>
+  <ul>
+    <li><a href="#roasting">Coffees</a></li>
+    <li><a href="#story">Our story</a></li>
+    <li><a href="#subscribe">Subscribe</a></li>
+    <li><a href="#subscribe" class="nav-cta">Order coffee</a></li>
+  </ul>
+</nav>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Roasted Tuesdays &amp; Fridays</span>
+    <span class="marquee-item">Free shipping over $40</span>
+    <span class="marquee-item">Subscriber discount: 15% off forever</span>
+    <span class="marquee-item">Small batch · always</span>
+    <span class="marquee-item">Lethbridge, Alberta · est. 2020</span>
+    <span class="marquee-item">Roasted Tuesdays &amp; Fridays</span>
+    <span class="marquee-item">Free shipping over $40</span>
+    <span class="marquee-item">Subscriber discount: 15% off forever</span>
+    <span class="marquee-item">Small batch · always</span>
+    <span class="marquee-item">Lethbridge, Alberta · est. 2020</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">Lethbridge, AB · Est. 2020</span>
+  <h1 class="headline">
+    Coffee with<br/>
+    a <span class="ital">conscience</span><span class="stamp">vol. iv</span><br/>
+    and a kick.
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="lede">
+      We're a three-person roastery on the south side of the coulee. We roast small, ship fast, and refuse to put anything in a bag we wouldn't drink ourselves. <em>No flavored beans. No "house" blends.</em> Just single origins and a pair of seasonal blends, roasted twice a week, twelve pounds at a time.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">2x</span><span>Roasted weekly</span></div>
+      <div class="stat"><span class="num">12 lb</span><span>Avg. batch size</span></div>
+      <div class="stat"><span class="num">14 day</span><span>Roast-to-cup max</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROASTING NOW -->
+<section class="roasting-section" id="roasting">
+  <div class="section-head">
+    <div>
+      <span class="section-eyebrow">Vol. IV / What we're roasting now</span>
+      <h2>Four coffees<br/>on the <em>bench</em>.</h2>
+    </div>
+    <p class="section-aside">— Lineup rotates with the season. Tasting notes are honest, not aspirational. Roast date stamped on every bag.</p>
+  </div>
+
+  <div class="coffees-grid">
+
+    <!-- Coffee 1 -->
+    <div class="coffee-card">
+      <div class="coffee-bag">
+        <div class="bag-shape">
+          <span class="bag-stamp">Vol. 04</span>
+          <span class="bag-name">Yirgacheffe</span>
+          <span class="bag-region">Ethiopia</span>
+          <span class="bag-bottom-stripe"></span>
+        </div>
+      </div>
+      <div class="coffee-info">
+        <div class="coffee-info-top">
+          <span>SINGLE ORIGIN · ETHIOPIA</span>
+          <span>LIGHT ROAST</span>
+        </div>
+        <h3>Yirgacheffe <em>Konga</em></h3>
+        <p class="coffee-region">Idido washing station · Gedeo Zone</p>
+        <p class="notes">Bright florality, bergamot, white peach. The kind of coffee that makes you remember why you started caring about coffee in the first place.</p>
+        <div class="specs">
+          <div class="spec"><div class="spec-label">Process</div><div class="spec-value">Washed</div></div>
+          <div class="spec"><div class="spec-label">Altitude</div><div class="spec-value">2,050m</div></div>
+          <div class="spec"><div class="spec-label">Best for</div><div class="spec-value">Pour over</div></div>
+        </div>
+        <div class="row-bottom">
+          <span class="price">$24<small>/ 340g</small></span>
+          <a href="#subscribe" class="order-link">Order →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee 2 -->
+    <div class="coffee-card">
+      <div class="coffee-bag">
+        <div class="bag-shape">
+          <span class="bag-stamp">Vol. 04</span>
+          <span class="bag-name">Huila</span>
+          <span class="bag-region">Colombia</span>
+          <span class="bag-bottom-stripe"></span>
+        </div>
+      </div>
+      <div class="coffee-info">
+        <div class="coffee-info-top">
+          <span>SINGLE ORIGIN · COLOMBIA</span>
+          <span>MEDIUM ROAST</span>
+        </div>
+        <h3>Huila <em>San Adolfo</em></h3>
+        <p class="coffee-region">Finca La Esperanza · Acevedo</p>
+        <p class="notes">Caramel, cocoa nibs, ripe plum. A bigger body coffee that holds up to milk without losing its sweetness. Our most reliable everyday cup.</p>
+        <div class="specs">
+          <div class="spec"><div class="spec-label">Process</div><div class="spec-value">Washed</div></div>
+          <div class="spec"><div class="spec-label">Altitude</div><div class="spec-value">1,750m</div></div>
+          <div class="spec"><div class="spec-label">Best for</div><div class="spec-value">Espresso</div></div>
+        </div>
+        <div class="row-bottom">
+          <span class="price">$22<small>/ 340g</small></span>
+          <a href="#subscribe" class="order-link">Order →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee 3 -->
+    <div class="coffee-card">
+      <div class="coffee-bag">
+        <div class="bag-shape">
+          <span class="bag-stamp">Vol. 04</span>
+          <span class="bag-name">Kayanza</span>
+          <span class="bag-region">Burundi</span>
+          <span class="bag-bottom-stripe"></span>
+        </div>
+      </div>
+      <div class="coffee-info">
+        <div class="coffee-info-top">
+          <span>SINGLE ORIGIN · BURUNDI</span>
+          <span>LIGHT-MED ROAST</span>
+        </div>
+        <h3>Kayanza <em>Gahahe</em></h3>
+        <p class="coffee-region">Gahahe washing station · Kayanza Province</p>
+        <p class="notes">Black currant, honey, juicy mouthfeel. Wild and a little weird — exactly what you want from a Burundi. Limited run, won't be back this season.</p>
+        <div class="specs">
+          <div class="spec"><div class="spec-label">Process</div><div class="spec-value">Natural</div></div>
+          <div class="spec"><div class="spec-label">Altitude</div><div class="spec-value">1,900m</div></div>
+          <div class="spec"><div class="spec-label">Best for</div><div class="spec-value">Pour over</div></div>
+        </div>
+        <div class="row-bottom">
+          <span class="price">$26<small>/ 340g</small></span>
+          <a href="#subscribe" class="order-link">Order →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee 4 -->
+    <div class="coffee-card">
+      <div class="coffee-bag">
+        <div class="bag-shape">
+          <span class="bag-stamp">Vol. 04</span>
+          <span class="bag-name">Coulee</span>
+          <span class="bag-region">Seasonal Blend</span>
+          <span class="bag-bottom-stripe"></span>
+        </div>
+      </div>
+      <div class="coffee-info">
+        <div class="coffee-info-top">
+          <span>BLEND · ETH + COL</span>
+          <span>MEDIUM ROAST</span>
+        </div>
+        <h3>The <em>Coulee</em> Blend</h3>
+        <p class="coffee-region">Ethiopia + Colombia · Our flagship</p>
+        <p class="notes">Milk chocolate, brown sugar, hint of orange peel. Built for people who want something forgiving but not boring. Our biggest seller every season.</p>
+        <div class="specs">
+          <div class="spec"><div class="spec-label">Process</div><div class="spec-value">Mixed</div></div>
+          <div class="spec"><div class="spec-label">Altitude</div><div class="spec-value">Various</div></div>
+          <div class="spec"><div class="spec-label">Best for</div><div class="spec-value">Anything</div></div>
+        </div>
+        <div class="row-bottom">
+          <span class="price">$20<small>/ 340g</small></span>
+          <a href="#subscribe" class="order-link">Order →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section" id="story">
+  <div class="story-grid">
+    <div class="story-image">
+      <span class="stamp">Lethbridge · 2020</span>
+    </div>
+    <div class="story-content">
+      <span class="section-eyebrow">— Vol. IV / The story</span>
+      <h2>Two friends, <em>one drum roaster,</em> and a problem.</h2>
+      <p>The problem was simple: the best coffee we'd ever had was always somewhere else. New York, Portland, Toronto — never Lethbridge. So in spring of 2020, in the worst possible year to start anything, we found a 12-kilo Probat in a coffee shop closing in Calgary, drove it home in a U-Haul, and started learning how to roast.</p>
+      <p>Five years later we're still here, still learning. We've roasted for some of the best cafés in the prairies. We sell direct because we like talking to the people drinking the coffee. We don't do flavored beans because we don't drink flavored beans.</p>
+      <p>Most of all: we roast coffee the way we'd want it served — fresh, honest, and a little bit weird.</p>
+      <p class="signoff">— Will &amp; Marcus, founders</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIPTION FLOW -->
+<section class="subscribe-section" id="subscribe">
+  <div class="subscribe-inner">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">Vol. IV / Order</span>
+        <h2>Bag, grind, <em>frequency</em>.</h2>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-progress">
+        <div class="step active" data-step="1"><span class="num">i.</span>Coffee</div>
+        <div class="step" data-step="2"><span class="num">ii.</span>Grind</div>
+        <div class="step" data-step="3"><span class="num">iii.</span>Frequency</div>
+        <div class="step" data-step="4"><span class="num">iv.</span>You</div>
+        <div class="step" data-step="5"><span class="num">v.</span>Review</div>
+        <div class="step" data-step="6"><span class="num">vi.</span>Payment</div>
+      </div>
+
+      <div class="order-body">
+
+        <!-- STEP 1: Coffee -->
+        <div class="order-step active" data-panel="1">
+          <h3 class="step-title">Pick a <em>coffee.</em></h3>
+          <p class="step-sub">Single origins ship 1-2 days after roast. Subscriptions auto-rotate to the latest batch.</p>
+
+          <div class="coffee-pick-grid">
+            <button type="button" class="coffee-pick" data-coffee="Yirgacheffe Konga" data-region="Ethiopia" data-price="24">
+              <div class="pick-name">Yirgacheffe Konga</div>
+              <div class="pick-region">Ethiopia · Light roast</div>
+              <div class="pick-notes">Bright florality, bergamot, white peach.</div>
+            </button>
+            <button type="button" class="coffee-pick" data-coffee="Huila San Adolfo" data-region="Colombia" data-price="22">
+              <div class="pick-name">Huila San Adolfo</div>
+              <div class="pick-region">Colombia · Medium roast</div>
+              <div class="pick-notes">Caramel, cocoa nibs, ripe plum.</div>
+            </button>
+            <button type="button" class="coffee-pick" data-coffee="Kayanza Gahahe" data-region="Burundi" data-price="26">
+              <div class="pick-name">Kayanza Gahahe</div>
+              <div class="pick-region">Burundi · Light-medium</div>
+              <div class="pick-notes">Black currant, honey, juicy mouthfeel.</div>
+            </button>
+            <button type="button" class="coffee-pick" data-coffee="The Coulee Blend" data-region="ETH + COL" data-price="20">
+              <div class="pick-name">The Coulee Blend</div>
+              <div class="pick-region">ETH + COL · Medium roast</div>
+              <div class="pick-notes">Milk chocolate, brown sugar, orange peel.</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Grind & Size -->
+        <div class="order-step" data-panel="2">
+          <h3 class="step-title">Whole bean or <em>ground?</em></h3>
+          <p class="step-sub">If you don't have a grinder yet, just tell us how you brew and we'll grind for it.</p>
+
+          <span class="field-label">— Grind</span>
+          <div class="field-block">
+            <div class="option-row">
+              <button type="button" class="opt" data-grind="Whole bean">
+                <span class="opt-name">Whole bean</span>
+                <span class="opt-meta">Best · grind fresh</span>
+              </button>
+              <button type="button" class="opt" data-grind="Espresso">
+                <span class="opt-name">Espresso</span>
+                <span class="opt-meta">Fine</span>
+              </button>
+              <button type="button" class="opt" data-grind="Drip / pour over">
+                <span class="opt-name">Drip / Pour</span>
+                <span class="opt-meta">Medium</span>
+              </button>
+              <button type="button" class="opt" data-grind="French press">
+                <span class="opt-name">French press</span>
+                <span class="opt-meta">Coarse</span>
+              </button>
+              <button type="button" class="opt" data-grind="Aeropress">
+                <span class="opt-name">Aeropress</span>
+                <span class="opt-meta">Med-fine</span>
+              </button>
+              <button type="button" class="opt" data-grind="Cold brew">
+                <span class="opt-name">Cold brew</span>
+                <span class="opt-meta">Very coarse</span>
+              </button>
+            </div>
+          </div>
+
+          <span class="field-label">— Bag size</span>
+          <div class="option-row two">
+            <button type="button" class="opt" data-size="340g" data-multiplier="1">
+              <span class="opt-name">340 g</span>
+              <span class="opt-meta">~ 24 cups</span>
+            </button>
+            <button type="button" class="opt" data-size="680g" data-multiplier="1.85">
+              <span class="opt-name">680 g</span>
+              <span class="opt-meta">~ 48 cups · save 7%</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Frequency -->
+        <div class="order-step" data-panel="3">
+          <h3 class="step-title">Once or <em>regularly?</em></h3>
+          <p class="step-sub">Subscribe and save 15% — pause, skip, or cancel any time. Most folks land on every two weeks.</p>
+
+          <div class="freq-toggle">
+            <button type="button" class="freq-option active" data-freq-type="onetime">One-time</button>
+            <button type="button" class="freq-option" data-freq-type="subscription">Subscription · save 15%</button>
+          </div>
+
+          <div id="subscriptionFreq" style="display: none;">
+            <div class="sub-discount-note">15% off every shipment, forever — no contracts, cancel anytime.</div>
+            <span class="field-label">— How often?</span>
+            <div class="option-row">
+              <button type="button" class="opt freq-cadence" data-cadence="Weekly">
+                <span class="opt-name">Weekly</span>
+                <span class="opt-meta">Every 7 days</span>
+              </button>
+              <button type="button" class="opt freq-cadence selected" data-cadence="Every 2 weeks">
+                <span class="opt-name">Every 2 wks</span>
+                <span class="opt-meta">Most popular</span>
+              </button>
+              <button type="button" class="opt freq-cadence" data-cadence="Monthly">
+                <span class="opt-name">Monthly</span>
+                <span class="opt-meta">Every 30 days</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: You -->
+        <div class="order-step" data-panel="4">
+          <h3 class="step-title">Where should we <em>send it?</em></h3>
+          <p class="step-sub">First-time? Welcome. We'll send tracking the moment it ships.</p>
+
+          <div class="field-block">
+            <span class="field-label">— Name</span>
+            <input type="text" id="custName" placeholder="" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: inherit; font-size: 1rem;" />
+          </div>
+          <div class="field-block">
+            <span class="field-label">— Email</span>
+            <input type="email" id="custEmail" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: inherit; font-size: 1rem;" />
+          </div>
+          <div class="field-block">
+            <span class="field-label">— Address</span>
+            <input type="text" id="custAddr" placeholder="Street, city, postal code" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: inherit; font-size: 1rem;" />
+          </div>
+        </div>
+
+        <!-- STEP 5: Review -->
+        <div class="order-step" data-panel="5">
+          <h3 class="step-title">Looks <em>good?</em></h3>
+          <p class="step-sub">Review your order. Next step is payment — we never store card details.</p>
+
+          <div class="summary-box">
+            <div class="summary-line"><span class="label">Coffee</span><span class="value" id="sumCoffee">—</span></div>
+            <div class="summary-line"><span class="label">Grind</span><span class="value" id="sumGrind">—</span></div>
+            <div class="summary-line"><span class="label">Size</span><span class="value" id="sumSize">—</span></div>
+            <div class="summary-line"><span class="label">Frequency</span><span class="value" id="sumFreq">—</span></div>
+            <div class="summary-line"><span class="label">Shipping</span><span class="value">Free (over $40)</span></div>
+            <div class="summary-line total"><span class="label">Total</span><span class="value" id="sumTotal">—</span></div>
+          </div>
+
+          <p style="font-family: 'Fraunces', serif; font-style: italic; color: var(--rust); font-size: 0.95rem; margin-bottom: 0.4rem;">— what happens next</p>
+          <p style="font-size: 0.92rem; color: var(--cream-soft); line-height: 1.6;">
+            On the next step you'll enter card details. In a real order this would be processed via Stripe — payment is only charged when your coffee actually ships, never before.
+          </p>
+        </div>
+
+        <!-- STEP 6: Payment -->
+        <div class="order-step" data-panel="6">
+          <div class="demo-payment-banner">
+            <span class="demo-stamp">DEMO ONLY</span>
+            <p>This is a demonstration of a card-collection step. <strong>Do not enter real card details.</strong> No data is transmitted, stored, or processed. In a real implementation this would be a Stripe Elements form.</p>
+          </div>
+
+          <h3 class="step-title">Card <em>details.</em></h3>
+          <p class="step-sub">Charged only when your coffee ships. Cancel or pause any time, no questions.</p>
+
+          <div class="field-block">
+            <span class="field-label">— Card number</span>
+            <input type="text" id="cardNumber" placeholder="4242 4242 4242 4242" autocomplete="off" inputmode="numeric" maxlength="19" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 1rem; letter-spacing: 0.04em;" />
+          </div>
+
+          <div class="card-row-three">
+            <div>
+              <span class="field-label">— Expiry</span>
+              <input type="text" id="cardExpiry" placeholder="MM / YY" autocomplete="off" maxlength="7" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 1rem;" />
+            </div>
+            <div>
+              <span class="field-label">— CVC</span>
+              <input type="text" id="cardCvc" placeholder="123" autocomplete="off" inputmode="numeric" maxlength="4" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 1rem;" />
+            </div>
+            <div>
+              <span class="field-label">— Postal</span>
+              <input type="text" id="cardZip" placeholder="T1J 0A0" autocomplete="off" maxlength="7" style="width: 100%; padding: 0.7rem 0; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 1rem;" />
+            </div>
+          </div>
+
+          <div class="payment-summary-mini">
+            <div class="summary-line"><span class="label">Charging today</span><span class="value">$0.00</span></div>
+            <div class="summary-line"><span class="label">When ships</span><span class="value" id="paySumTotal">—</span></div>
+          </div>
+
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--paper-faint); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--crimson);">●</span> Demo payment form · No real processing · No real Stripe
+          </p>
+        </div>
+
+        <!-- COMPLETE -->
+        <div class="order-step" data-panel="7">
+          <div class="order-complete">
+            <div class="stamp-circle">✓</div>
+            <h3>Coffee is on the <em>way.</em></h3>
+            <p>Confirmation sent to your email.</p>
+            <p>Roasting Friday, shipping Saturday.</p>
+            <span class="order-num">ORDER · CCO-7421</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="order-footer" id="orderFooter">
+        <button type="button" class="btn-back" id="backBtn" disabled>← Back</button>
+        <button type="button" class="btn-next" id="nextBtn" disabled>Continue</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mega">
+    <div class="megatype">Coulee.</div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <a href="#" class="logo">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">Coulee Coffee Co.</span>
+      </a>
+      <p>Three people, one roaster, four coffees at a time. Roasting Tuesdays and Fridays in Lethbridge, AB. Shipping across Canada.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Coffee</h5>
+      <ul>
+        <li><a href="#roasting">Single origins</a></li>
+        <li><a href="#roasting">Blends</a></li>
+        <li><a href="#subscribe">Subscriptions</a></li>
+        <li><a href="#">Wholesale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Visit</h5>
+      <ul>
+        <li>418 5th Street S</li>
+        <li>Lethbridge, AB</li>
+        <li>(403) 555-0144</li>
+        <li>hello@couleecoffee.example</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Hours</h5>
+      <ul>
+        <li>Mon–Fri: 7a–5p</li>
+        <li>Sat: 8a–3p</li>
+        <li>Sun: closed</li>
+        <li>Roasting: T &amp; F mornings</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Coulee Coffee Co. · Lethbridge, AB</span>
+    <span class="built-by">Site by <a href="https://lushand.co" target="_blank" rel="noopener">Lush &amp; Co.</a></span>
+  </div>
+</footer>
+
+<script>
+  const order = {
+    coffee: null,
+    coffeePrice: null,
+    grind: null,
+    size: '340g',
+    sizeMult: 1,
+    freqType: 'onetime',
+    cadence: 'Every 2 weeks',
+    custName: '',
+    custEmail: '',
+    custAddr: '',
+    cardNumber: '',
+    cardExpiry: '',
+    cardCvc: '',
+    cardZip: ''
+  };
+
+  let currentStep = 1;
+  const TOTAL_STEPS = 6;
+
+  // Coffee selection
+  document.querySelectorAll('.coffee-pick').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.coffee-pick').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      order.coffee = btn.dataset.coffee;
+      order.coffeePrice = parseFloat(btn.dataset.price);
+      validateStep();
+    });
+  });
+
+  // Grind options
+  document.querySelectorAll('[data-grind]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-grind]').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      order.grind = btn.dataset.grind;
+      validateStep();
+    });
+  });
+
+  // Size options - default 340g selected on enter
+  document.querySelectorAll('[data-size]').forEach((btn, idx) => {
+    if (idx === 0) btn.classList.add('selected');
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-size]').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      order.size = btn.dataset.size;
+      order.sizeMult = parseFloat(btn.dataset.multiplier);
+      validateStep();
+    });
+  });
+
+  // Frequency type toggle
+  document.querySelectorAll('.freq-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.freq-option').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      order.freqType = btn.dataset.freqType;
+      const subDiv = document.getElementById('subscriptionFreq');
+      subDiv.style.display = order.freqType === 'subscription' ? 'block' : 'none';
+      validateStep();
+    });
+  });
+
+  // Cadence options
+  document.querySelectorAll('.freq-cadence').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.freq-cadence').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      order.cadence = btn.dataset.cadence;
+      validateStep();
+    });
+  });
+
+  // Customer info
+  ['custName', 'custEmail', 'custAddr'].forEach(id => {
+    document.getElementById(id).addEventListener('input', e => {
+      order[id] = e.target.value;
+      validateStep();
+    });
+  });
+
+  // Card field listeners with formatters
+  const cardNumberInput = document.getElementById('cardNumber');
+  cardNumberInput.addEventListener('input', e => {
+    // Strip non-digits, then group into chunks of 4 with spaces
+    let v = e.target.value.replace(/\D/g, '').slice(0, 16);
+    let formatted = v.match(/.{1,4}/g)?.join(' ') || '';
+    e.target.value = formatted;
+    order.cardNumber = v;
+    validateStep();
+  });
+
+  const cardExpiryInput = document.getElementById('cardExpiry');
+  cardExpiryInput.addEventListener('input', e => {
+    // Auto-format MM / YY
+    let v = e.target.value.replace(/\D/g, '').slice(0, 4);
+    if (v.length >= 3) {
+      v = v.slice(0, 2) + ' / ' + v.slice(2);
+    }
+    e.target.value = v;
+    order.cardExpiry = v;
+    validateStep();
+  });
+
+  const cardCvcInput = document.getElementById('cardCvc');
+  cardCvcInput.addEventListener('input', e => {
+    let v = e.target.value.replace(/\D/g, '').slice(0, 4);
+    e.target.value = v;
+    order.cardCvc = v;
+    validateStep();
+  });
+
+  const cardZipInput = document.getElementById('cardZip');
+  cardZipInput.addEventListener('input', e => {
+    order.cardZip = e.target.value;
+    validateStep();
+  });
+
+  function validateStep() {
+    const nextBtn = document.getElementById('nextBtn');
+    let valid = false;
+    if (currentStep === 1) valid = !!order.coffee;
+    else if (currentStep === 2) valid = !!order.grind && !!order.size;
+    else if (currentStep === 3) valid = true; // freq always has a default
+    else if (currentStep === 4) valid = order.custName && order.custEmail && order.custAddr;
+    else if (currentStep === 5) valid = true; // review step
+    else if (currentStep === 6) valid = order.cardNumber && order.cardExpiry && order.cardCvc; // payment
+    nextBtn.disabled = !valid;
+  }
+
+  function calcTotal() {
+    let base = order.coffeePrice * order.sizeMult;
+    if (order.freqType === 'subscription') base = base * 0.85;
+    return base.toFixed(2);
+  }
+
+  function updateSummary() {
+    document.getElementById('sumCoffee').textContent = order.coffee || '—';
+    document.getElementById('sumGrind').textContent = order.grind || '—';
+    document.getElementById('sumSize').textContent = order.size || '—';
+    let freqText = order.freqType === 'subscription' ? `${order.cadence} (subscription)` : 'One-time';
+    document.getElementById('sumFreq').textContent = freqText;
+    document.getElementById('sumTotal').textContent = '$' + calcTotal();
+  }
+
+  function goToStep(step) {
+    document.querySelectorAll('.order-step').forEach(p => p.classList.remove('active'));
+    document.querySelector(`.order-step[data-panel="${step}"]`).classList.add('active');
+
+    document.querySelectorAll('.order-progress .step').forEach((s, idx) => {
+      s.classList.remove('active', 'complete');
+      const stepNum = idx + 1;
+      if (stepNum < step) s.classList.add('complete');
+      else if (stepNum === step) s.classList.add('active');
+    });
+
+    currentStep = step;
+    document.getElementById('backBtn').disabled = (step === 1 || step === 7);
+
+    const nextBtn = document.getElementById('nextBtn');
+    if (step === 5) nextBtn.textContent = 'Continue to payment';
+    else if (step === 6) nextBtn.textContent = 'Place order';
+    else nextBtn.textContent = 'Continue';
+
+    if (step === 7) {
+      document.getElementById('orderFooter').style.display = 'none';
+    } else {
+      document.getElementById('orderFooter').style.display = 'flex';
+    }
+
+    if (step === 5) updateSummary();
+    if (step === 6) {
+      // Show total on payment step
+      document.getElementById('paySumTotal').textContent = '$' + calcTotal();
+    }
+
+    if (step !== 1) {
+      document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    validateStep();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentStep === 6) {
+      goToStep(7); // payment → complete
+    } else {
+      goToStep(currentStep + 1);
+    }
+  });
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    if (currentStep > 1) goToStep(currentStep - 1);
+  });
+</script>
+
+</body>
+</html>
