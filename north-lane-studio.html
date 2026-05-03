@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>North Lane Studio — A small yoga &amp; pilates studio in Canmore, AB</title>
+<meta name="description" content="A boutique yoga and pilates studio in Canmore, Alberta. Small classes, considered teaching, no membership pressure. Drop in or settle in." />
+<meta property="og:title" content="North Lane Studio — Canmore, AB" />
+<meta property="og:description" content="A small yoga and pilates studio in Canmore, Alberta." />
+<meta property="og:type" content="website" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "North Lane Studio",
+  "telephone": "+1-403-555-0162",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "108 North Lane",
+    "addressLocality": "Canmore",
+    "addressRegion": "AB",
+    "postalCode": "T1W 2K1",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.0884, "longitude": -115.3479 },
+  "priceRange": "$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,400;10..48,500&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Light/airy palette */
+    --paper: #fafaf7;
+    --paper-warm: #f5f3ed;
+    --rule: #ece9df;
+    --rule-soft: #f0ede4;
+
+    /* Ink */
+    --ink: #1c1c19;
+    --ink-soft: #4a4a44;
+    --ink-mute: #8a8a82;
+    --ink-faint: #b8b8b0;
+
+    /* Accent — muted sage */
+    --sage: #6b7a5f;
+    --sage-deep: #4d5945;
+    --sage-pale: #d8dcc9;
+    --sage-tint: #eef0e6;
+
+    /* Soft contrast */
+    --rose: #c4a098;
+    --warm-shadow: rgba(28, 28, 25, 0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: "opsz" 32; }
+  .serif-it { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+
+  /* ═══════ DEMO BANNER ═══════ */
+  .demo-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.65rem 1rem;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+  .demo-banner b { color: var(--sage-pale); font-weight: 500; margin-right: 0.4rem; }
+  .demo-banner a { color: var(--sage-pale); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  /* ═══════ NAV ═══════ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .logo .mark {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+  .logo .sep {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 1rem;
+    margin: 0 0.05em;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.4rem;
+    align-items: center;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--ink); }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 0.6rem 1.3rem;
+    border-radius: 99px;
+    transition: all 0.2s;
+    font-weight: 400;
+  }
+  .nav-cta:hover {
+    background: var(--sage-deep);
+  }
+
+  /* ═══════ HERO ═══════ */
+  .hero {
+    padding: 7rem 2.5rem 5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-row-top {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: baseline;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 4rem;
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .hero-row-top .center {
+    text-align: center;
+    color: var(--sage);
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  h1.headline {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 7.5vw, 7.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    max-width: 16ch;
+  }
+  h1.headline .it {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-bottom {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: end;
+  }
+  .hero-bottom .lede {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 38rem;
+    color: var(--ink-soft);
+  }
+  .hero-bottom .lede em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.7rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 99px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+  .hero-cta::after { content: "→"; transition: transform 0.25s ease; }
+  .hero-cta:hover { background: var(--sage-deep); }
+  .hero-cta:hover::after { transform: translateX(3px); }
+
+  /* Today's classes strip */
+  .today-strip {
+    margin-top: 4rem;
+    padding: 1.5rem;
+    background: var(--paper-warm);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    border: 1px solid var(--rule);
+  }
+  .today-strip .label {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .today-strip .classes {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+    font-size: 0.92rem;
+  }
+  .today-strip .class-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .today-strip .time {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .today-strip .name {
+    color: var(--ink-soft);
+  }
+  .today-strip .name .level {
+    color: var(--ink-mute);
+    font-size: 0.82rem;
+    margin-left: 0.3rem;
+  }
+  .today-strip .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    margin-right: 0.3rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .today-strip .full .status-dot { background: var(--ink-faint); }
+  .today-strip .full .time, .today-strip .full .name { color: var(--ink-mute); text-decoration: line-through; text-decoration-thickness: 1px; }
+
+  /* ═══════ SECTIONS ═══════ */
+  .section {
+    padding: 7rem 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .section-head {
+    margin-bottom: 4.5rem;
+    max-width: 50rem;
+  }
+  .section-eyebrow {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .section h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .section h2 .it {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+
+  /* ═══════ CLASSES ═══════ */
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .class-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 2.2rem 2rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .class-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -16px rgba(28, 28, 25, 0.08);
+  }
+  .class-card .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .class-card .level-badge {
+    background: var(--sage-tint);
+    color: var(--sage-deep);
+    padding: 0.25rem 0.65rem;
+    border-radius: 99px;
+    font-size: 0.72rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .class-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 32;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.8rem;
+    color: var(--ink);
+  }
+  .class-card h3 .it {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .class-card p {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .class-card .details {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+  }
+  .class-card .details strong {
+    color: var(--ink);
+    font-weight: 500;
+    display: block;
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ═══════ INSTRUCTORS ═══════ */
+  .instructors-section {
+    background: var(--paper-warm);
+    margin: 0;
+    padding: 7rem 2.5rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .instructors-inner { max-width: 1300px; margin: 0 auto; }
+  .instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .instructor {
+    text-align: center;
+  }
+  .instructor .avatar {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: var(--sage-tint);
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 2.6rem;
+    color: var(--sage-deep);
+    border: 1px solid var(--rule);
+  }
+  .instructor h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 32;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
+  }
+  .instructor .role {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+  .instructor p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+
+  /* ═══════ MEMBERSHIPS ═══════ */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .price-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .price-card.featured {
+    border-color: var(--sage);
+    background: var(--sage-tint);
+  }
+  .price-card.featured::before {
+    content: "Most popular";
+    position: absolute;
+    top: -10px; left: 1.6rem;
+    background: var(--sage-deep);
+    color: var(--paper);
+    font-size: 0.72rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 99px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+  }
+  .price-card .name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 32;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .price-card .description {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-bottom: 1.6rem;
+  }
+  .price-card .price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .price-card .price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: "opsz" 48;
+    font-weight: 300;
+    font-size: 3.4rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .price-card .currency { font-size: 1.4rem; color: var(--ink-mute); }
+  .price-card .period {
+    color: var(--ink-mute);
+    font-size: 0.92rem;
+    margin-left: 0.2rem;
+  }
+  .price-card .sub-note {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .price-card ul {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .price-card.featured ul { border-top-color: var(--sage-pale); }
+  .price-card ul li {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .price-card ul li::before {
+    content: "—";
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  .price-card .price-cta {
+    display: block;
+    text-align: center;
+    background: var(--paper-warm);
+    color: var(--ink);
+    padding: 0.85rem 1.4rem;
+    border-radius: 99px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border: 1px solid var(--rule);
+  }
+  .price-card.featured .price-cta {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .price-card .price-cta:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* ═══════ ABOUT / PHILOSOPHY ═══════ */
+  .about-section {
+    padding: 7rem 2.5rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .about-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-section .section-eyebrow {
+    color: var(--sage-pale);
+  }
+  .about-section h2 {
+    color: var(--paper);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.1;
+  }
+  .about-section h2 .it { color: var(--sage-pale); }
+  .about-content blockquote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.4;
+    color: var(--paper);
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--sage-pale);
+  }
+  .about-content p {
+    color: rgba(250, 250, 247, 0.78);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* ═══════ BOOKING FLOW ═══════ */
+  .booking-section {
+    padding: 7rem 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .booking-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 0;
+    max-width: 740px;
+    margin: 3rem auto 0;
+    overflow: hidden;
+  }
+  .booking-progress {
+    display: flex;
+    border-bottom: 1px solid var(--rule);
+  }
+  .progress-step {
+    flex: 1;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-right: 1px solid var(--rule);
+    background: var(--paper-warm);
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  .progress-step:last-child { border-right: none; }
+  .progress-step.active {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .progress-step.complete {
+    background: var(--sage-tint);
+    color: var(--sage-deep);
+  }
+  .progress-step .num {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    margin-right: 0.4rem;
+    color: var(--sage);
+  }
+
+  .booking-body {
+    padding: 3rem 2.5rem;
+    min-height: 380px;
+  }
+  .step-panel { display: none; }
+  .step-panel.active { display: block; animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .step-title .it { font-family: 'Instrument Serif', serif; font-style: italic; color: var(--sage); }
+  .step-sub {
+    color: var(--ink-mute);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Class type selection */
+  .class-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  .class-option {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .class-option:hover { border-color: var(--ink-faint); }
+  .class-option.selected {
+    border-color: var(--sage);
+    background: var(--sage-tint);
+  }
+  .class-option .opt-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+    color: var(--ink);
+  }
+  .class-option .opt-meta {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+  }
+
+  /* Date selection */
+  .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .date-cell {
+    aspect-ratio: 1;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0.5rem 0.2rem;
+  }
+  .date-cell:hover:not(.disabled) { border-color: var(--ink-faint); }
+  .date-cell.selected {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .date-cell.disabled {
+    color: var(--ink-faint);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .date-cell .dow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+    opacity: 0.7;
+  }
+  .date-cell .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+  .time-slot {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.92rem;
+  }
+  .time-slot:hover:not(.full) { border-color: var(--ink-faint); }
+  .time-slot.selected {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .time-slot.full {
+    color: var(--ink-faint);
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+  .time-slot small { display: block; font-size: 0.72rem; color: var(--ink-mute); margin-top: 0.15rem; }
+  .time-slot.selected small { color: rgba(250, 250, 247, 0.7); }
+
+  /* Form fields */
+  .field {
+    margin-bottom: 1.4rem;
+  }
+  .field label {
+    display: block;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    background: transparent;
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    transition: border-color 0.25s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none;
+    border-bottom-color: var(--sage);
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Confirmation */
+  .confirmation-summary {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+  .summary-line:last-child { border-bottom: none; }
+  .summary-line .label { color: var(--ink-mute); }
+  .summary-line .value { color: var(--ink); font-weight: 500; }
+  .summary-line.total .value {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.2rem;
+    color: var(--sage-deep);
+  }
+
+  .booking-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2.5rem;
+    border-top: 1px solid var(--rule);
+    background: var(--paper-warm);
+  }
+  .step-back {
+    background: transparent;
+    border: none;
+    color: var(--ink-mute);
+    font-family: 'Geist', sans-serif;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .step-back:hover { color: var(--ink); }
+  .step-back:disabled { opacity: 0.3; cursor: not-allowed; }
+  .step-next {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 0.85rem 1.7rem;
+    border-radius: 99px;
+    font-family: 'Geist', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .step-next::after { content: "→"; transition: transform 0.2s; }
+  .step-next:hover { background: var(--sage-deep); }
+  .step-next:hover::after { transform: translateX(3px); }
+  .step-next:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .step-next:disabled::after { display: none; }
+
+  /* Booking complete state */
+  .booking-complete {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  .booking-complete .check {
+    width: 56px; height: 56px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: var(--sage-tint);
+    color: var(--sage-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-family: 'Instrument Serif', serif;
+  }
+  .booking-complete h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.015em;
+  }
+  .booking-complete h3 .it { font-family: 'Instrument Serif', serif; font-style: italic; color: var(--sage); }
+  .booking-complete p {
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ═══════ FOOTER ═══════ */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 4rem 2.5rem 2rem;
+    background: var(--paper);
+  }
+  .footer-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+  }
+  .footer-brand .logo { margin-bottom: 1rem; }
+  .footer-brand p {
+    color: var(--ink-mute);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 26rem;
+  }
+  .footer-col h5 {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--sage);
+    font-size: 0.98rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .footer-col ul {
+    list-style: none;
+  }
+  .footer-col ul li {
+    padding: 0.3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  .footer-col a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--ink); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.6rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--ink-mute);
+    gap: 1rem;
+  }
+  .built-by a {
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ═══════ RESPONSIVE ═══════ */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.4rem; }
+    nav ul li:nth-child(1), nav ul li:nth-child(2) { display: none; }
+    .hero { padding: 4rem 1.4rem 3rem; }
+    .hero-row-top { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+    .hero-row-top .center { order: -1; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 2rem; }
+    .today-strip { padding: 1.2rem; flex-direction: column; align-items: flex-start; }
+    .today-strip .classes { flex-direction: column; gap: 0.8rem; }
+    .section { padding: 4rem 1.4rem; }
+    .classes-grid { grid-template-columns: 1fr; }
+    .instructors-section { padding: 4rem 1.4rem; }
+    .instructors-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .about-section { padding: 4rem 1.4rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .booking-section { padding: 4rem 1.4rem; }
+    .booking-body { padding: 2rem 1.4rem; }
+    .booking-footer { padding: 1rem 1.4rem; }
+    .progress-step { font-size: 0.7rem; padding: 0.7rem 0.4rem; letter-spacing: 0.04em; }
+    .progress-step .num { display: block; margin: 0 0 0.15rem; }
+    .class-options { grid-template-columns: 1fr; }
+    .date-grid { grid-template-columns: repeat(7, 1fr); gap: 0.3rem; }
+    .date-cell .dow { font-size: 0.6rem; }
+    .date-cell .num { font-size: 1rem; }
+    .time-slots { grid-template-columns: repeat(2, 1fr); }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ DEMO BANNER ═══════ -->
+<div class="demo-banner">
+  <b>★</b> Demo / concept site &nbsp;·&nbsp; North Lane Studio is not a real business &nbsp;·&nbsp; Built by <a href="https://lushand.co" target="_blank" rel="noopener">Lush &amp; Co.</a>
+</div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav>
+  <a href="#" class="logo">
+    <span class="mark">North Lane</span>
+    <span class="sep">/</span>
+    <span class="mark">Studio</span>
+  </a>
+  <ul>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#teachers">Teachers</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#book" class="nav-cta">Book a class</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-row-top">
+    <span>Est. 2019</span>
+    <span class="center">— a small studio on a quiet street —</span>
+    <span>Canmore, AB</span>
+  </div>
+
+  <h1 class="headline">
+    A small studio. <span class="it">Considered teaching.</span> No membership pressure.
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="lede">
+      North Lane is a boutique yoga and pilates studio tucked off a residential street in Canmore. We keep classes small — twelve mats, never more — so teachers can actually <em>teach</em>, not just count breaths. Drop in, take a pack, or settle in for the season.
+    </p>
+    <a href="#book" class="hero-cta">Book a class</a>
+  </div>
+
+  <div class="today-strip">
+    <span class="label">— Today's classes</span>
+    <div class="classes">
+      <div class="class-item">
+        <span class="status-dot"></span>
+        <span class="time">7:00 AM</span>
+        <span class="name">Slow Flow <span class="level">/ all levels</span></span>
+      </div>
+      <div class="class-item full">
+        <span class="status-dot"></span>
+        <span class="time">9:30 AM</span>
+        <span class="name">Reformer Pilates <span class="level">/ intermediate</span></span>
+      </div>
+      <div class="class-item">
+        <span class="status-dot"></span>
+        <span class="time">12:15 PM</span>
+        <span class="name">Lunch Yin <span class="level">/ all levels</span></span>
+      </div>
+      <div class="class-item">
+        <span class="status-dot"></span>
+        <span class="time">5:45 PM</span>
+        <span class="name">Vinyasa <span class="level">/ open</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CLASSES ═══════ -->
+<section class="section" id="classes">
+  <div class="section-head">
+    <span class="section-eyebrow">— what we offer</span>
+    <h2>Six class formats. <span class="it">No filler.</span></h2>
+  </div>
+
+  <div class="classes-grid">
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>60 MIN · YOGA</span>
+        <span class="level-badge">All levels</span>
+      </div>
+      <h3>Slow <span class="it">Flow</span></h3>
+      <p>An unhurried Vinyasa class focused on breath, alignment, and the long hold. Soft music, considered transitions, room to settle.</p>
+      <div class="details">
+        <div><strong>Mon, Wed, Fri</strong>7:00 AM</div>
+        <div><strong>Sat</strong>9:00 AM</div>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>50 MIN · PILATES</span>
+        <span class="level-badge">Intermediate</span>
+      </div>
+      <h3>Reformer <span class="it">Pilates</span></h3>
+      <p>Classical reformer work in a small group. Eight reformers, one teacher, full attention. Not a beginner class — a foundation course is required.</p>
+      <div class="details">
+        <div><strong>Tue, Thu</strong>9:30 AM, 5:30 PM</div>
+        <div><strong>Sun</strong>10:00 AM</div>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>45 MIN · YOGA</span>
+        <span class="level-badge">All levels</span>
+      </div>
+      <h3>Lunch <span class="it">Yin</span></h3>
+      <p>A midday reset. Long-held passive poses, dim lights, focus on connective tissue. You'll leave looser than you arrived.</p>
+      <div class="details">
+        <div><strong>Mon–Fri</strong>12:15 PM</div>
+        <div><strong>—</strong>—</div>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>75 MIN · YOGA</span>
+        <span class="level-badge">Open</span>
+      </div>
+      <h3>Evening <span class="it">Vinyasa</span></h3>
+      <p>A stronger flow practice for the end of the day. Builds heat, opens hips and shoulders, ends with a long savasana. Open to all but moves at pace.</p>
+      <div class="details">
+        <div><strong>Mon, Wed</strong>5:45 PM</div>
+        <div><strong>Fri</strong>5:30 PM</div>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>50 MIN · PILATES</span>
+        <span class="level-badge">All levels</span>
+      </div>
+      <h3>Mat <span class="it">Pilates</span></h3>
+      <p>Strength-focused mat work. Core, posture, breath. No equipment beyond a mat — so a great place to start with Pilates if you're new.</p>
+      <div class="details">
+        <div><strong>Tue, Thu</strong>6:30 AM</div>
+        <div><strong>Sat</strong>10:30 AM</div>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <div class="meta-row">
+        <span>90 MIN · YOGA</span>
+        <span class="level-badge">All levels</span>
+      </div>
+      <h3>Sunday <span class="it">Restorative</span></h3>
+      <p>Long, slow, supported postures with bolsters and blankets. Designed to undo the week. Limited to twelve mats; almost always sells out.</p>
+      <div class="details">
+        <div><strong>Sun</strong>4:00 PM</div>
+        <div><strong>—</strong>—</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ INSTRUCTORS ═══════ -->
+<section class="instructors-section" id="teachers">
+  <div class="instructors-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">— who teaches</span>
+      <h2>Three teachers. <span class="it">All here for years.</span></h2>
+    </div>
+
+    <div class="instructors-grid">
+      <div class="instructor">
+        <div class="avatar">M</div>
+        <h4>Maren</h4>
+        <p class="role">Founder · Yoga</p>
+        <p>Opened North Lane in 2019 after a decade teaching across Calgary and Vancouver. RYT-500. Specializes in slow flow and restorative work.</p>
+      </div>
+      <div class="instructor">
+        <div class="avatar">J</div>
+        <h4>Jules</h4>
+        <p class="role">Pilates</p>
+        <p>Classical reformer teacher trained at the Pilates Center in Boulder. Joined the studio in 2021. Teaches the foundations course and reformer.</p>
+      </div>
+      <div class="instructor">
+        <div class="avatar">A</div>
+        <h4>Anika</h4>
+        <p class="role">Yoga · Yin</p>
+        <p>Came from a physiotherapy background before training in yoga. Teaches with anatomical precision and a quiet sense of humor. Joined in 2022.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MEMBERSHIP / PRICING ═══════ -->
+<section class="section" id="pricing">
+  <div class="section-head">
+    <span class="section-eyebrow">— how to join</span>
+    <h2>Drop in, take a pack, <span class="it">or settle in.</span></h2>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="price-card">
+      <div class="name">Drop-in</div>
+      <p class="description">Try a class. No commitment, no setup.</p>
+      <div class="price-line">
+        <span class="currency">$</span>
+        <span class="price">28</span>
+        <span class="period">/ class</span>
+      </div>
+      <p class="sub-note">First class half off</p>
+      <ul>
+        <li>Any single class</li>
+        <li>Mats and props provided</li>
+        <li>No registration required</li>
+        <li>Use within 30 days</li>
+      </ul>
+      <a href="#book" class="price-cta">Book a class</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="name">Class Pack</div>
+      <p class="description">Most popular — flexibility without commitment.</p>
+      <div class="price-line">
+        <span class="currency">$</span>
+        <span class="price">220</span>
+        <span class="period">/ 10 classes</span>
+      </div>
+      <p class="sub-note">Works out to $22 per class</p>
+      <ul>
+        <li>10 classes, any format</li>
+        <li>Use within 4 months</li>
+        <li>Shareable with one partner</li>
+        <li>Mats and props provided</li>
+      </ul>
+      <a href="#book" class="price-cta">Get the pack</a>
+    </div>
+
+    <div class="price-card">
+      <div class="name">Unlimited</div>
+      <p class="description">For people who come three or more times a week.</p>
+      <div class="price-line">
+        <span class="currency">$</span>
+        <span class="price">165</span>
+        <span class="period">/ month</span>
+      </div>
+      <p class="sub-note">Cancel anytime, no contracts</p>
+      <ul>
+        <li>Unlimited regular classes</li>
+        <li>Bring a friend twice / month</li>
+        <li>10% off workshops</li>
+        <li>Reserve up to 7 days ahead</li>
+      </ul>
+      <a href="#book" class="price-cta">Start unlimited</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ ABOUT / PHILOSOPHY ═══════ -->
+<section class="about-section">
+  <div class="about-inner">
+    <div>
+      <span class="section-eyebrow">— our approach</span>
+      <h2>Why <span class="it">small classes,</span> always.</h2>
+    </div>
+    <div class="about-content">
+      <blockquote>
+        "Twelve mats is enough. The point is for the teacher to actually see you, your knees, your shoulders, the moment you stopped breathing."
+      </blockquote>
+      <p>North Lane was opened in 2019 with one practical rule: no class would ever exceed twelve mats. Most studios run 20-30, because the math works better. We made the math work differently — slightly higher prices, fewer classes per day, teachers paid for their attention rather than their reach.</p>
+      <p>The result is a studio that feels small. People know each other. Teachers know hands and hips and what your back was doing last week. New people come back. That's what we built it for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ BOOKING FLOW ═══════ -->
+<section class="booking-section" id="book">
+  <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+    <span class="section-eyebrow">— book a class</span>
+    <h2>Find your <span class="it">spot.</span></h2>
+  </div>
+
+  <div class="booking-card">
+    <div class="booking-progress">
+      <div class="progress-step active" data-step="1">
+        <span class="num">i.</span>Class
+      </div>
+      <div class="progress-step" data-step="2">
+        <span class="num">ii.</span>Time
+      </div>
+      <div class="progress-step" data-step="3">
+        <span class="num">iii.</span>You
+      </div>
+      <div class="progress-step" data-step="4">
+        <span class="num">iv.</span>Confirm
+      </div>
+    </div>
+
+    <div class="booking-body">
+
+      <!-- STEP 1: Class type -->
+      <div class="step-panel active" data-panel="1">
+        <h3 class="step-title">Pick a <span class="it">class.</span></h3>
+        <p class="step-sub">All formats are 45–90 minutes. Levels are advisory, not strict.</p>
+
+        <div class="class-options">
+          <button type="button" class="class-option" data-class="Slow Flow" data-price="28">
+            <div class="opt-name">Slow Flow</div>
+            <div class="opt-meta">60 min · all levels · yoga</div>
+          </button>
+          <button type="button" class="class-option" data-class="Reformer Pilates" data-price="34">
+            <div class="opt-name">Reformer Pilates</div>
+            <div class="opt-meta">50 min · intermediate · pilates</div>
+          </button>
+          <button type="button" class="class-option" data-class="Lunch Yin" data-price="22">
+            <div class="opt-name">Lunch Yin</div>
+            <div class="opt-meta">45 min · all levels · yoga</div>
+          </button>
+          <button type="button" class="class-option" data-class="Evening Vinyasa" data-price="28">
+            <div class="opt-name">Evening Vinyasa</div>
+            <div class="opt-meta">75 min · open · yoga</div>
+          </button>
+          <button type="button" class="class-option" data-class="Mat Pilates" data-price="26">
+            <div class="opt-name">Mat Pilates</div>
+            <div class="opt-meta">50 min · all levels · pilates</div>
+          </button>
+          <button type="button" class="class-option" data-class="Sunday Restorative" data-price="32">
+            <div class="opt-name">Sunday Restorative</div>
+            <div class="opt-meta">90 min · all levels · yoga</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Date & time -->
+      <div class="step-panel" data-panel="2">
+        <h3 class="step-title">Pick a <span class="it">date and time.</span></h3>
+        <p class="step-sub" id="step2sub">Available within the next two weeks.</p>
+
+        <div class="date-grid" id="dateGrid"></div>
+
+        <div style="margin-top: 1.5rem; font-family: 'Instrument Serif', serif; font-style: italic; color: var(--sage); font-size: 0.95rem; margin-bottom: 0.7rem;">— times for selected day</div>
+        <div class="time-slots" id="timeSlots">
+          <div style="grid-column: 1 / -1; color: var(--ink-mute); font-size: 0.9rem;">Choose a date above to see available times.</div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Your info -->
+      <div class="step-panel" data-panel="3">
+        <h3 class="step-title">Tell us a <span class="it">little about you.</span></h3>
+        <p class="step-sub">First-time? Welcome. We'll send a quick text the day before with parking details and what to bring.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="experience">Experience with this format</label>
+          <select id="experience">
+            <option value="new">New — first time at North Lane</option>
+            <option value="some">Some — I've taken classes before</option>
+            <option value="regular">Regular — I practice often</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Anything we should know? (injuries, etc.)</label>
+          <textarea id="notes" rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- STEP 4: Confirm -->
+      <div class="step-panel" data-panel="4">
+        <h3 class="step-title">Almost <span class="it">there.</span></h3>
+        <p class="step-sub">Review your booking, then confirm.</p>
+
+        <div class="confirmation-summary">
+          <div class="summary-line"><span class="label">Class</span><span class="value" id="sumClass">—</span></div>
+          <div class="summary-line"><span class="label">Date &amp; time</span><span class="value" id="sumWhen">—</span></div>
+          <div class="summary-line"><span class="label">For</span><span class="value" id="sumName">—</span></div>
+          <div class="summary-line total"><span class="label">Drop-in price</span><span class="value" id="sumPrice">—</span></div>
+        </div>
+
+        <p style="font-family: 'Instrument Serif', serif; font-style: italic; color: var(--sage); font-size: 0.95rem; margin-bottom: 0.4rem;">— how payment works (in this demo)</p>
+        <p style="font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6;">
+          A real booking would charge your card on file via Stripe at this step. For demonstration, clicking "Confirm" shows the booking complete state without taking payment.
+        </p>
+      </div>
+
+      <!-- COMPLETE -->
+      <div class="step-panel" data-panel="5">
+        <div class="booking-complete">
+          <div class="check">✓</div>
+          <h3>You're <span class="it">on the schedule.</span></h3>
+          <p>A confirmation has been sent to your email.</p>
+          <p style="font-family: 'Instrument Serif', serif; font-style: italic; color: var(--sage); margin-top: 1rem;">— see you on the mat</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="booking-footer" id="bookingFooter">
+      <button type="button" class="step-back" id="backBtn" disabled>← Back</button>
+      <button type="button" class="step-next" id="nextBtn" disabled>Continue</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <span class="mark">North Lane</span>
+        <span class="sep">/</span>
+        <span class="mark">Studio</span>
+      </a>
+      <p>A small yoga and pilates studio tucked off a residential street in Canmore. Twelve mats, three teachers, no membership pressure.</p>
+    </div>
+    <div class="footer-col">
+      <h5>— studio</h5>
+      <ul>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#teachers">Teachers</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#book">Book a class</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>— visit</h5>
+      <ul>
+        <li>108 North Lane</li>
+        <li>Canmore, AB T1W 2K1</li>
+        <li>(403) 555-0162</li>
+        <li>hello@northlanestudio.example</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>— hours</h5>
+      <ul>
+        <li>Mon–Fri: 6:30 AM – 7 PM</li>
+        <li>Sat–Sun: 8 AM – 4 PM</li>
+        <li>Closed Wednesdays in Aug</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 North Lane Studio · Canmore, AB</span>
+    <span class="built-by">Site by <a href="https://lushand.co" target="_blank" rel="noopener">Lush &amp; Co.</a></span>
+  </div>
+</footer>
+
+<script>
+  // Booking state
+  const booking = {
+    classType: null,
+    classPrice: null,
+    date: null,
+    time: null,
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: ''
+  };
+
+  let currentStep = 1;
+  const TOTAL_STEPS = 4;
+
+  // Class option selection
+  document.querySelectorAll('.class-option').forEach(option => {
+    option.addEventListener('click', () => {
+      document.querySelectorAll('.class-option').forEach(o => o.classList.remove('selected'));
+      option.classList.add('selected');
+      booking.classType = option.dataset.class;
+      booking.classPrice = parseFloat(option.dataset.price);
+      validateStep();
+    });
+  });
+
+  // Build calendar (next 14 days)
+  const dateGrid = document.getElementById('dateGrid');
+  const today = new Date();
+  const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  for (let i = 0; i < 14; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + i);
+
+    const cell = document.createElement('button');
+    cell.type = 'button';
+    cell.className = 'date-cell';
+    cell.dataset.date = date.toISOString().split('T')[0];
+    cell.dataset.display = `${dayNames[date.getDay()]}, ${monthNames[date.getMonth()]} ${date.getDate()}`;
+
+    cell.innerHTML = `
+      <span class="dow">${dayNames[date.getDay()]}</span>
+      <span class="num">${date.getDate()}</span>
+    `;
+
+    cell.addEventListener('click', () => {
+      document.querySelectorAll('.date-cell').forEach(c => c.classList.remove('selected'));
+      cell.classList.add('selected');
+      booking.date = cell.dataset.display;
+      booking.dateRaw = cell.dataset.date;
+      buildTimeSlots(date);
+      booking.time = null;
+      validateStep();
+    });
+
+    dateGrid.appendChild(cell);
+  }
+
+  function buildTimeSlots(date) {
+    const slotsContainer = document.getElementById('timeSlots');
+    slotsContainer.innerHTML = '';
+
+    // Day-of-week aware slot generation
+    const dow = date.getDay();
+    let slots = [];
+    if (dow === 0) { // Sunday
+      slots = [
+        { time: '10:00 AM', spots: 'Reformer · 4 left' },
+        { time: '4:00 PM', spots: 'Restorative · 7 left' }
+      ];
+    } else if (dow === 6) { // Saturday
+      slots = [
+        { time: '9:00 AM', spots: 'Slow Flow · full', full: true },
+        { time: '10:30 AM', spots: 'Mat Pilates · 6 left' }
+      ];
+    } else {
+      slots = [
+        { time: '6:30 AM', spots: 'Mat Pilates · 9 left' },
+        { time: '7:00 AM', spots: 'Slow Flow · 11 left' },
+        { time: '9:30 AM', spots: 'Reformer · 2 left' },
+        { time: '12:15 PM', spots: 'Lunch Yin · 8 left' },
+        { time: '5:30 PM', spots: 'Reformer · full', full: true },
+        { time: '5:45 PM', spots: 'Vinyasa · 5 left' }
+      ];
+    }
+
+    if (slots.length === 0) {
+      slotsContainer.innerHTML = '<div style="grid-column: 1 / -1; color: var(--ink-mute); font-size: 0.9rem;">No classes scheduled this day.</div>';
+      return;
+    }
+
+    slots.forEach(s => {
+      const slot = document.createElement('button');
+      slot.type = 'button';
+      slot.className = 'time-slot' + (s.full ? ' full' : '');
+      slot.innerHTML = `${s.time}<small>${s.spots}</small>`;
+      if (!s.full) {
+        slot.addEventListener('click', () => {
+          document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+          slot.classList.add('selected');
+          booking.time = s.time;
+          validateStep();
+        });
+      }
+      slotsContainer.appendChild(slot);
+    });
+  }
+
+  // Field tracking for step 3
+  ['firstName', 'lastName', 'email', 'phone'].forEach(id => {
+    document.getElementById(id).addEventListener('input', e => {
+      booking[id] = e.target.value;
+      validateStep();
+    });
+  });
+
+  function validateStep() {
+    const nextBtn = document.getElementById('nextBtn');
+    let valid = false;
+    if (currentStep === 1) valid = !!booking.classType;
+    else if (currentStep === 2) valid = !!booking.date && !!booking.time;
+    else if (currentStep === 3) valid = booking.firstName && booking.lastName && booking.email && booking.phone;
+    else if (currentStep === 4) valid = true;
+    nextBtn.disabled = !valid;
+  }
+
+  function goToStep(step) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector(`.step-panel[data-panel="${step}"]`).classList.add('active');
+
+    document.querySelectorAll('.progress-step').forEach((s, idx) => {
+      s.classList.remove('active', 'complete');
+      const stepNum = idx + 1;
+      if (stepNum < step) s.classList.add('complete');
+      else if (stepNum === step) s.classList.add('active');
+    });
+
+    currentStep = step;
+    document.getElementById('backBtn').disabled = (step === 1 || step === 5);
+
+    const nextBtn = document.getElementById('nextBtn');
+    if (step === 4) nextBtn.textContent = 'Confirm booking';
+    else nextBtn.textContent = 'Continue';
+
+    if (step === 5) {
+      document.getElementById('bookingFooter').style.display = 'none';
+    } else {
+      document.getElementById('bookingFooter').style.display = 'flex';
+    }
+
+    // Scroll to top of booking card
+    if (step !== 1) {
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    validateStep();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentStep === 4) {
+      // Populate confirmation
+      document.getElementById('sumClass').textContent = booking.classType;
+      document.getElementById('sumWhen').textContent = `${booking.date} · ${booking.time}`;
+      document.getElementById('sumName').textContent = `${booking.firstName} ${booking.lastName}`;
+      document.getElementById('sumPrice').textContent = `$${booking.classPrice}`;
+      goToStep(5);
+    } else if (currentStep === 3) {
+      // Show summary on step 4
+      document.getElementById('sumClass').textContent = booking.classType;
+      document.getElementById('sumWhen').textContent = `${booking.date} · ${booking.time}`;
+      document.getElementById('sumName').textContent = `${booking.firstName} ${booking.lastName}`;
+      document.getElementById('sumPrice').textContent = `$${booking.classPrice}`;
+      goToStep(4);
+    } else {
+      goToStep(currentStep + 1);
+    }
+  });
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    if (currentStep > 1) goToStep(currentStep - 1);
+  });
+</script>
+
+</body>
+</html>
