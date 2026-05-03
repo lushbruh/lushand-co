@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ═══════ SEO META ═══════ -->
+<title>Hollow & Hedge — Landscape Studio | Crowsnest Pass, AB</title>
+<meta name="description" content="A landscape design studio working across southern Alberta and the Crowsnest Pass. Native meadows, garden design, stonework, and seasonal care for considered outdoor spaces." />
+<meta name="keywords" content="landscape design Crowsnest Pass, native meadow, garden design Alberta, hardscape Pincher Creek, prairie restoration" />
+<meta name="author" content="Hollow & Hedge" />
+<link rel="canonical" href="https://hollowandhedge.example/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hollow & Hedge — Landscape Studio" />
+<meta property="og:description" content="Slow gardens, made to last. Southern Alberta landscape design." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- LocalBusiness JSON-LD for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hollow & Hedge",
+  "telephone": "+1-403-555-0140",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "21 Bridge Avenue",
+    "addressLocality": "Crowsnest Pass",
+    "addressRegion": "AB",
+    "postalCode": "T0K 0E0",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.6313, "longitude": -114.4811 },
+  "openingHours": "Mo-Fr 08:00-17:00",
+  "priceRange": "$$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30;1,9..144,300..700,100&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #f1ebdd;
+    --cream-deep: #e7dfcc;
+    --forest: #2a3528;
+    --forest-deep: #1d2a1d;
+    --moss: #6f7e62;
+    --terracotta: #b8553a;
+    --ink: #1a1c19;
+    --rule: #c9bfa8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+    position: relative;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.32; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .demo-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: var(--forest); color: var(--cream); text-align: center;
+    padding: 0.4rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .demo-banner b { color: #e89572; }
+
+  /* NAV */
+  nav.main {
+    position: fixed; top: 28px; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(241, 235, 221, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent; transition: border-color 0.3s ease;
+  }
+  nav.main.scrolled { border-bottom-color: var(--rule); }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--forest); text-decoration: none; }
+  .logo span { font-style: italic; font-variation-settings: "SOFT" 100; color: var(--terracotta); }
+  nav ul { display: flex; list-style: none; gap: 2.4rem; align-items: center; }
+  nav a { text-decoration: none; color: var(--forest); font-size: 0.74rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.16em; position: relative; padding-bottom: 2px; cursor: pointer; }
+  nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px;
+    background: var(--terracotta); transition: width 0.4s ease; }
+  nav a:hover::after { width: 100%; }
+  .nav-cta { color: var(--cream) !important; background: var(--forest); padding: 0.55rem 1.2rem !important;
+    border-radius: 999px; transition: background 0.3s; border: none; cursor: pointer; font-family: inherit; }
+  .nav-cta:hover { background: var(--terracotta); }
+  .nav-cta::after { display: none; }
+
+  /* HERO */
+  .hero { min-height: 100vh; padding: 9rem 2.5rem 4rem; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; position: relative; }
+  .hero-meta { grid-column: 1/3; display: flex; justify-content: space-between; align-items: baseline;
+    border-top: 1px solid var(--rule); padding-top: 1rem; margin-bottom: 2rem;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
+  h1.headline { font-family: 'Fraunces', serif; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+    font-size: clamp(3rem, 8.4vw, 8.8rem); line-height: 0.92; letter-spacing: -0.035em; color: var(--forest); }
+  h1 .italic { font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100; color: var(--terracotta); }
+  .hero-right { padding-bottom: 1rem; max-width: 30rem; justify-self: end; }
+  .hero-right p { font-size: 1.02rem; line-height: 1.65; margin-bottom: 1.6rem; }
+  .hero-right .lede::first-letter { font-family: 'Fraunces', serif; font-size: 2.4em; float: left;
+    line-height: 0.85; margin: 0.1em 0.08em -0.1em 0; color: var(--terracotta); }
+  .signature { display: flex; align-items: center; gap: 0.8rem; font-size: 0.76rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); }
+  .signature::before { content: ""; display: block; width: 2.2rem; height: 1px; background: var(--moss); }
+  .ornament { position: absolute; pointer-events: none; opacity: 0.55; }
+
+  /* Atmospheric hero photo strip */
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 21/9;
+    overflow: hidden;
+    position: relative;
+    background: var(--moss);
+  }
+  .hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hero-image::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 100px rgba(26, 28, 25, 0.3);
+    pointer-events: none;
+  }
+  @media (max-width: 760px) {
+    .hero-image { aspect-ratio: 4/3; }
+  }
+  .ornament-1 { top: 11rem; right: 3rem; width: 130px; }
+
+  /* MARQUEE */
+  .marquee { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 0; overflow: hidden; white-space: nowrap; background: var(--cream-deep); }
+  .marquee-track { display: inline-flex; gap: 3rem; animation: scroll 38s linear infinite;
+    font-family: 'Fraunces', serif; font-size: 1.35rem; font-style: italic;
+    font-variation-settings: "SOFT" 100; color: var(--forest); }
+  .marquee-track .dot { width: 6px; height: 6px; background: var(--terracotta); border-radius: 50%; align-self: center; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION HEAD */
+  .section-head { padding: 6rem 2.5rem 2.4rem; display: grid; grid-template-columns: 1fr 2fr;
+    gap: 3rem; align-items: end; border-bottom: 1px solid var(--rule); }
+  .section-head .num { font-family: 'Fraunces', serif; font-style: italic;
+    font-variation-settings: "SOFT" 100; font-size: 1rem; color: var(--terracotta); }
+  .section-head .num::before { content: "§ "; }
+  .section-head h2 { font-family: 'Fraunces', serif; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 0.96; letter-spacing: -0.025em; color: var(--forest); }
+  .section-head h2 em { font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100; color: var(--terracotta); }
+
+  /* PHILOSOPHY */
+  .philosophy { padding: 5rem 2.5rem 6rem; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start; border-bottom: 1px solid var(--rule); }
+  .philosophy blockquote { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem); line-height: 1.25; color: var(--forest); }
+  .philosophy blockquote::before { content: "“"; font-size: 4rem; line-height: 0;
+    vertical-align: -0.4em; color: var(--terracotta); margin-right: 0.15em; }
+  .philosophy .body p { margin-bottom: 1.2rem; line-height: 1.7; }
+
+  /* SERVICES */
+  .services { padding: 4rem 2.5rem 6rem; border-bottom: 1px solid var(--rule); }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+  .service { padding: 2.4rem 2rem; border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule); transition: background 0.4s; cursor: pointer; position: relative; }
+  .service:hover { background: var(--cream-deep); }
+  .service .index { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--moss); text-transform: uppercase; }
+  .service h3 { font-family: 'Fraunces', serif; font-size: 1.9rem; margin: 0.4rem 0 0.8rem;
+    color: var(--forest); letter-spacing: -0.015em; font-weight: 400; }
+  .service p { font-size: 0.92rem; max-width: 30rem; line-height: 1.6; }
+  .service .arrow { position: absolute; top: 2.4rem; right: 2rem; width: 28px; height: 28px;
+    border: 1px solid var(--rule); border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; transition: all 0.3s; }
+  .service:hover .arrow { background: var(--terracotta); border-color: var(--terracotta); transform: rotate(-45deg); }
+  .service:hover .arrow svg path { stroke: var(--cream); }
+
+  /* PROJECTS */
+  .projects { padding: 4rem 2.5rem 6rem; border-bottom: 1px solid var(--rule); }
+  .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; margin-top: 1rem; }
+  .project { cursor: pointer; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .project:hover { transform: translateY(-4px); }
+  .project .img { width: 100%; aspect-ratio: 4/5; border-radius: 2px; overflow: hidden;
+    position: relative; margin-bottom: 1rem; }
+  .project .img::after { content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 80px rgba(26, 28, 25, 0.25); }
+  .project-1 .img { background: url("hh-project-1.jpg") center/cover no-repeat, #4d5d44; }
+  .project-2 .img { background: url("hh-project-2.jpg") center/cover no-repeat, #a86a3f; }
+  .project-3 .img { background: url("hh-project-3.jpg") center/cover no-repeat, #8a8169; }
+  .project-1 { grid-column: 1 / 6; }
+  .project-2 { grid-column: 6 / 10; padding-top: 4rem; }
+  .project-3 { grid-column: 10 / 13; padding-top: 1.5rem; }
+  .project .img svg { display: none; }
+  .project .meta { display: flex; justify-content: space-between; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); }
+  .project h4 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.4rem;
+    color: var(--forest); margin: 0.4rem 0 0.2rem; letter-spacing: -0.01em; }
+  .project .loc { font-size: 0.85rem; font-style: italic; color: var(--moss);
+    font-family: 'Fraunces', serif; font-variation-settings: "SOFT" 100; }
+
+  /* BOOKING */
+  .booking { padding: 6rem 2.5rem 7rem; background: var(--forest); color: var(--cream); }
+  .booking .section-head { border-color: rgba(241, 235, 221, 0.18); padding: 0 0 2.4rem; }
+  .booking .section-head h2 { color: var(--cream); }
+  .booking .section-head h2 em { color: #e89572; }
+  .booking .section-head .num { color: #e89572; }
+  .booking-flow { margin-top: 3rem; background: var(--cream); color: var(--ink);
+    border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); }
+  .step-bar { display: flex; border-bottom: 1px solid var(--rule); background: var(--cream-deep); }
+  .step { flex: 1; padding: 1.1rem 1.5rem; font-size: 0.7rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--moss); border-right: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 0.7rem; transition: all 0.3s; }
+  .step:last-child { border-right: none; }
+  .step .num { width: 22px; height: 22px; border: 1px solid var(--moss); border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem;
+    font-feature-settings: "tnum"; }
+  .step.active { color: var(--forest); background: var(--cream); }
+  .step.active .num { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .step.done { color: var(--terracotta); }
+  .step.done .num { background: var(--terracotta); border-color: var(--terracotta); color: var(--cream); }
+  .step-content { padding: 3rem; min-height: 400px; }
+  .step-panel { display: none; }
+  .step-panel.active { display: block; animation: fadeUp 0.5s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .panel-head { font-family: 'Fraunces', serif; font-weight: 400; font-size: 1.6rem;
+    margin-bottom: 0.4rem; color: var(--forest); letter-spacing: -0.015em; }
+  .panel-sub { color: var(--moss); margin-bottom: 2rem; font-size: 0.95rem; }
+  .service-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .opt { border: 1px solid var(--rule); background: var(--cream); padding: 1.4rem;
+    border-radius: 3px; cursor: pointer; transition: all 0.25s; text-align: left; font-family: inherit; }
+  .opt:hover { border-color: var(--moss); background: var(--cream-deep); }
+  .opt.selected { border-color: var(--forest); background: var(--cream-deep); }
+  .opt h5 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem;
+    color: var(--forest); margin-bottom: 0.3rem; }
+  .opt .desc { font-size: 0.85rem; color: var(--moss); margin-bottom: 0.6rem; }
+  .opt .price { font-size: 0.85rem; color: var(--terracotta); font-weight: 600; }
+
+  /* Calendar */
+  .calendar { border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; max-width: 480px; }
+  .cal-head { display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.2rem; background: var(--cream-deep); border-bottom: 1px solid var(--rule); }
+  .cal-head .month { font-family: 'Fraunces', serif; font-size: 1.1rem; }
+  .cal-nav { background: none; border: 1px solid var(--rule); width: 28px; height: 28px;
+    border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center;
+    justify-content: center; font-family: inherit; }
+  .cal-nav:hover { background: var(--cream); border-color: var(--forest); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); padding: 0.5rem; gap: 2px; }
+  .cal-grid .dow { text-align: center; font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--moss); padding: 0.4rem 0; }
+  .cal-day { aspect-ratio: 1; border: none; background: none; font-family: inherit;
+    font-feature-settings: "tnum"; border-radius: 50%; cursor: pointer; color: var(--ink);
+    transition: all 0.18s; }
+  .cal-day.empty { cursor: default; }
+  .cal-day:not(.empty):not(.disabled):hover { background: var(--cream-deep); }
+  .cal-day.disabled { color: var(--rule); cursor: not-allowed; }
+  .cal-day.selected { background: var(--forest); color: var(--cream); }
+  .cal-day.today { box-shadow: inset 0 0 0 1px var(--terracotta); }
+
+  /* Form fields */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 600px; }
+  .field label { display: block; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--moss); margin-bottom: 0.4rem; }
+  .field input, .field textarea { width: 100%; padding: 0.7rem 0; border: none;
+    border-bottom: 1px solid var(--rule); background: transparent; font-family: inherit;
+    font-size: 1rem; color: var(--ink); transition: border-color 0.2s; }
+  .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--forest); }
+  .field textarea { resize: vertical; min-height: 80px; }
+
+  /* Payment */
+  .pay-summary { background: var(--cream-deep); padding: 1.4rem 1.6rem; border-radius: 3px;
+    margin-bottom: 2rem; border-left: 3px solid var(--terracotta); max-width: 600px; }
+  .pay-summary .row { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.95rem; }
+  .pay-summary .row.total { border-top: 1px solid var(--rule); margin-top: 0.6rem;
+    padding-top: 0.7rem; font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--forest); }
+  .secure-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;
+    color: var(--moss); margin-top: 1.4rem; padding: 0.6rem 1rem; background: var(--cream-deep); border-radius: 99px; }
+
+  .btn-primary { background: var(--forest); color: var(--cream); border: none;
+    padding: 0.95rem 2rem; font-family: inherit; font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px; margin-top: 2rem;
+    transition: background 0.3s; font-weight: 500; }
+  .btn-primary:hover { background: var(--terracotta); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-secondary { background: none; border: 1px solid var(--rule); margin-right: 0.8rem;
+    color: var(--forest); padding: 0.95rem 2rem; font-family: inherit; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; border-radius: 2px; margin-top: 2rem; }
+  .btn-secondary:hover { border-color: var(--forest); }
+
+  .success { text-align: center; padding: 2rem 0; }
+  .success .check { width: 64px; height: 64px; border-radius: 50%; background: var(--terracotta);
+    color: var(--cream); display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.4rem; font-size: 1.8rem; animation: pop 0.5s cubic-bezier(0.16, 1.4, 0.3, 1); }
+  @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+  .success h3 { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+    font-variation-settings: "SOFT" 100; font-size: 2rem; color: var(--forest); margin-bottom: 0.6rem; }
+
+  /* FOOTER */
+  footer { padding: 6rem 2.5rem 2rem; background: var(--forest-deep); color: var(--cream); }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    padding-bottom: 4rem; border-bottom: 1px solid rgba(241,235,221,0.15); }
+  footer h5 { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #8a9a78; margin-bottom: 1.2rem; }
+  footer ul { list-style: none; }
+  footer li { padding: 0.3rem 0; font-size: 0.95rem; }
+  footer a { color: var(--cream); text-decoration: none; opacity: 0.85; }
+  footer a:hover { opacity: 1; color: #e89572; }
+  .foot-brand { font-family: 'Fraunces', serif; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+    font-size: clamp(2.5rem, 5vw, 4rem); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 1.4rem; }
+  .foot-brand em { font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100; color: #e89572; }
+  .foot-bottom { padding-top: 2rem; display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: rgba(241, 235, 221, 0.55); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav.main { padding: 1rem 1.4rem; }
+    nav ul li:not(:last-child) { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 8rem 1.4rem 3rem; gap: 2rem; }
+    .hero-right { padding-bottom: 0; justify-self: start; }
+    .ornament-1 { display: none; }
+    .section-head { grid-template-columns: 1fr; padding: 4rem 1.4rem 1.6rem; gap: 1.2rem; }
+    .philosophy { grid-template-columns: 1fr; padding: 3rem 1.4rem 4rem; gap: 2.5rem; }
+    .services, .projects { padding: 3rem 1.4rem 4rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .project-1, .project-2, .project-3 { grid-column: 1; padding-top: 0; }
+    .booking { padding: 4rem 1.4rem 5rem; }
+    .step-content { padding: 2rem 1.4rem; }
+    .service-options { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .step-bar { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .foot-bottom { flex-direction: column; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner"><b>★</b> Demo / concept site &nbsp;·&nbsp; Hollow &amp; Hedge is not a real business &nbsp;·&nbsp; Built by Lush &amp; Co.</div>
+
+<nav class="main" id="nav">
+  <a href="#" class="logo">Hollow <span>&</span> Hedge</a>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><button class="nav-cta" onclick="document.getElementById('book').scrollIntoView()">Book a Consult</button></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-meta">
+    <span>Est. 2014 &nbsp;·&nbsp; Crowsnest Pass, Alberta</span>
+    <span>Issue 11 &nbsp;·&nbsp; Spring 2026</span>
+  </div>
+  <div><h1 class="headline">Slow gardens,<br><span class="italic">made to last.</span></h1></div>
+  <div class="hero-right">
+    <p class="lede">Hollow & Hedge is a small landscape studio working across southern Alberta and the Crowsnest Pass. We design and build gardens, native meadows, and considered outdoor rooms — projects that grow into themselves over decades, not weeks.</p>
+    <div class="signature">A studio of four. Eleven years.</div>
+  </div>
+  <svg class="ornament ornament-1" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#2a3528" stroke-width="1" stroke-linecap="round">
+      <path d="M50 195 Q50 150 50 100 Q50 50 50 5"/>
+      <path d="M50 160 Q35 155 25 145 Q22 138 28 132"/>
+      <path d="M50 130 Q66 124 76 112 Q79 104 73 99"/>
+      <path d="M50 95 Q34 88 24 75 Q22 65 30 62"/>
+      <path d="M50 60 Q67 53 78 38 Q80 28 72 25"/>
+      <ellipse cx="28" cy="138" rx="9" ry="4" transform="rotate(-30 28 138)" fill="#2a3528" fill-opacity="0.15"/>
+      <ellipse cx="76" cy="106" rx="10" ry="4" transform="rotate(28 76 106)" fill="#2a3528" fill-opacity="0.15"/>
+      <ellipse cx="26" cy="68" rx="10" ry="4" transform="rotate(-28 26 68)" fill="#2a3528" fill-opacity="0.15"/>
+      <ellipse cx="76" cy="32" rx="10" ry="4" transform="rotate(30 76 32)" fill="#2a3528" fill-opacity="0.15"/>
+    </g>
+  </svg>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Native Meadows</span><span class="dot"></span>
+    <span>Garden Design</span><span class="dot"></span>
+    <span>Stonework</span><span class="dot"></span>
+    <span>Seasonal Care</span><span class="dot"></span>
+    <span>Shelterbelt Renewal</span><span class="dot"></span>
+    <span>Edible Landscapes</span><span class="dot"></span>
+    <span>Native Meadows</span><span class="dot"></span>
+    <span>Garden Design</span><span class="dot"></span>
+    <span>Stonework</span><span class="dot"></span>
+    <span>Seasonal Care</span><span class="dot"></span>
+    <span>Shelterbelt Renewal</span><span class="dot"></span>
+    <span>Edible Landscapes</span><span class="dot"></span>
+  </div>
+</div>
+
+<!-- Atmospheric hero photo -->
+<div class="hero-image">
+  <img src="hh-hero.jpg" alt="A native prairie meadow at golden hour in southern Alberta, with wild grasses, echinacea, and forget-me-nots in soft afternoon light." loading="lazy" />
+</div>
+
+<section id="about">
+  <div class="section-head">
+    <span class="num">01 &mdash; Philosophy</span>
+    <h2>We build for <em>weather, weight,</em> and the slow accumulation of time.</h2>
+  </div>
+  <div class="philosophy">
+    <blockquote>A good garden is more witnessed than designed. Our role is to set conditions — soil, structure, the right plant in the right ground — and let the place become itself.</blockquote>
+    <div class="body">
+      <p>Southern Alberta asks a great deal of a landscape. Our winters are unsentimental; the wind across the open prairie is patient and unyielding. We don't design against these forces — we design with them, using native grasses, hardy stone, and shelterbelts that hold their shape through forty Februarys.</p>
+      <p>Each project begins on foot. We walk the site through every season we can manage before drawing a line. We meet the existing trees, the drainage, the way light falls in October. Only then do we propose an intervention.</p>
+      <p>The work that follows is unhurried. We plant young, we let things establish, we return.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <span class="num">02 &mdash; Services</span>
+    <h2>Four practices, <em>refined over a decade.</em></h2>
+  </div>
+  <div class="services">
+    <div class="services-grid">
+      <div class="service">
+        <div class="index">A.</div>
+        <h3>Garden Design</h3>
+        <p>Full-property design and master plans for residential gardens. Beds, paths, structure, seasonal interest. From sketch to plant tag.</p>
+        <div class="arrow"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4" stroke="#2a3528" stroke-width="1.4" fill="none"/></svg></div>
+      </div>
+      <div class="service">
+        <div class="index">B.</div>
+        <h3>Native Meadows</h3>
+        <p>Prairie restoration and meadow installations using regional native seed mixes. Low-input, high-presence, full of pollinators.</p>
+        <div class="arrow"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4" stroke="#2a3528" stroke-width="1.4" fill="none"/></svg></div>
+      </div>
+      <div class="service">
+        <div class="index">C.</div>
+        <h3>Stonework & Hardscape</h3>
+        <p>Dry-stack walls, fieldstone patios, and stepping paths. We work primarily with locally-quarried stone — no concrete pavers.</p>
+        <div class="arrow"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4" stroke="#2a3528" stroke-width="1.4" fill="none"/></svg></div>
+      </div>
+      <div class="service">
+        <div class="index">D.</div>
+        <h3>Seasonal Care</h3>
+        <p>Stewardship visits for established gardens — pruning, dividing, soil amendments, and the careful editing a maturing landscape needs.</p>
+        <div class="arrow"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4" stroke="#2a3528" stroke-width="1.4" fill="none"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-head">
+    <span class="num">03 &mdash; Selected Work</span>
+    <h2>Three sites <em>we've stewarded.</em></h2>
+  </div>
+  <div class="projects">
+    <div class="project-grid">
+      <div class="project project-1">
+        <div class="img"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="none" stroke="#1a1c19" stroke-width="0.4" stroke-linecap="round"><path d="M10 80 Q15 65 12 50 M15 78 Q20 60 18 45 M22 82 Q25 68 23 52 M30 80 Q33 62 30 48"/><path d="M65 85 Q70 70 68 55 M72 83 Q76 65 74 50 M80 84 Q83 68 81 53 M87 82 Q90 65 88 50"/></g></svg></div>
+        <div class="meta"><span>Project 01</span><span>2023</span></div>
+        <h4>House on the Coulee</h4>
+        <p class="loc">Prairie restoration · Pincher Creek</p>
+      </div>
+      <div class="project project-2">
+        <div class="img"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="none" stroke="#1a1c19" stroke-width="0.5"><rect x="20" y="40" width="60" height="3"/><rect x="20" y="55" width="60" height="3"/><rect x="20" y="70" width="60" height="3"/><line x1="35" y1="30" x2="35" y2="80"/><line x1="50" y1="30" x2="50" y2="80"/><line x1="65" y1="30" x2="65" y2="80"/></g></svg></div>
+        <div class="meta"><span>Project 02</span><span>2024</span></div>
+        <h4>The Walled Kitchen Garden</h4>
+        <p class="loc">Edible landscape · Pincher Creek</p>
+      </div>
+      <div class="project project-3">
+        <div class="img"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="#1a1c19" fill-opacity="0.3"><ellipse cx="20" cy="70" rx="3" ry="20"/><ellipse cx="35" cy="65" rx="3" ry="25"/><ellipse cx="50" cy="68" rx="3" ry="22"/><ellipse cx="65" cy="63" rx="3" ry="27"/><ellipse cx="80" cy="68" rx="3" ry="22"/></g></svg></div>
+        <div class="meta"><span>Project 03</span><span>2022</span></div>
+        <h4>Shelterbelt Renewal</h4>
+        <p class="loc">Windbreak design · Fort Macleod</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="booking">
+  <div class="section-head">
+    <span class="num">04 &mdash; Begin</span>
+    <h2>Book an initial <em>consultation.</em></h2>
+  </div>
+
+  <div class="booking-flow">
+    <div class="step-bar">
+      <div class="step active" data-step="1"><span class="num">1</span> Service</div>
+      <div class="step" data-step="2"><span class="num">2</span> Date</div>
+      <div class="step" data-step="3"><span class="num">3</span> Details</div>
+      <div class="step" data-step="4"><span class="num">4</span> Deposit</div>
+    </div>
+
+    <div class="step-content">
+      <div class="step-panel active" data-panel="1">
+        <h3 class="panel-head">Choose a starting point</h3>
+        <p class="panel-sub">A consultation begins with a 90-minute on-site visit. Pick the offering that best fits your project.</p>
+        <div class="service-options">
+          <button class="opt" data-svc="design" data-price="350"><h5>Garden Design Consult</h5><p class="desc">Full residential property — design dialog, site walk, written follow-up.</p><p class="price">$350 deposit · applied to project</p></button>
+          <button class="opt" data-svc="meadow" data-price="350"><h5>Meadow / Prairie Consult</h5><p class="desc">Native meadow installation or restoration — site assessment & seed planning.</p><p class="price">$350 deposit · applied to project</p></button>
+          <button class="opt" data-svc="stone" data-price="450"><h5>Stonework Consult</h5><p class="desc">Walls, patios, paths. Includes preliminary material estimate.</p><p class="price">$450 deposit · applied to project</p></button>
+          <button class="opt" data-svc="care" data-price="200"><h5>Seasonal Care Visit</h5><p class="desc">Stewardship walk-through for an established garden. One-time or ongoing.</p><p class="price">$200 deposit · applied to first visit</p></button>
+        </div>
+        <button class="btn-primary" id="next-1" disabled>Continue →</button>
+      </div>
+
+      <div class="step-panel" data-panel="2">
+        <h3 class="panel-head">When should we visit?</h3>
+        <p class="panel-sub">Site visits run Tuesday through Friday, weather permitting. Choose a tentative date — we'll confirm by email.</p>
+        <div class="calendar">
+          <div class="cal-head">
+            <button class="cal-nav" id="prev-month">‹</button>
+            <span class="month" id="cal-month">May 2026</span>
+            <button class="cal-nav" id="next-month">›</button>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+        <div>
+          <button class="btn-secondary" data-back="1">← Back</button>
+          <button class="btn-primary" id="next-2" disabled>Continue →</button>
+        </div>
+      </div>
+
+      <div class="step-panel" data-panel="3">
+        <h3 class="panel-head">Tell us about the place</h3>
+        <p class="panel-sub">Just enough to know what to bring on the visit.</p>
+        <div class="form-grid">
+          <div class="field"><label>First name</label><input type="text" id="fn" /></div>
+          <div class="field"><label>Last name</label><input type="text" id="ln" /></div>
+          <div class="field"><label>Email</label><input type="email" id="em" /></div>
+          <div class="field"><label>Phone</label><input type="tel" id="ph" /></div>
+          <div class="field" style="grid-column:1/-1"><label>Property address</label><input type="text" id="addr" /></div>
+          <div class="field" style="grid-column:1/-1"><label>What are you hoping to do?</label><textarea id="notes" placeholder="A few sentences about the project — size, goals, anything that helps us prepare."></textarea></div>
+        </div>
+        <div>
+          <button class="btn-secondary" data-back="2">← Back</button>
+          <button class="btn-primary" id="next-3">Continue →</button>
+        </div>
+      </div>
+
+      <div class="step-panel" data-panel="4">
+        <h3 class="panel-head">Confirm with a deposit</h3>
+        <p class="panel-sub">Your deposit holds the visit and is applied in full toward your project.</p>
+        <div class="pay-summary">
+          <div class="row"><span id="sum-svc">—</span><span id="sum-price">$0</span></div>
+          <div class="row"><span id="sum-date" style="color: var(--moss); font-size: 0.9rem;">—</span></div>
+          <div class="row total"><span>Deposit due today</span><span id="sum-total">$0</span></div>
+        </div>
+        <div class="form-grid">
+          <div class="field" style="grid-column:1/-1"><label>Card number</label><input type="text" id="card" placeholder="4242 4242 4242 4242" maxlength="19" /></div>
+          <div class="field"><label>Expiry</label><input type="text" id="exp" placeholder="MM / YY" maxlength="7" /></div>
+          <div class="field"><label>CVC</label><input type="text" id="cvc" placeholder="123" maxlength="4" /></div>
+          <div class="field" style="grid-column:1/-1"><label>Name on card</label><input type="text" id="cardname" /></div>
+        </div>
+        <div class="secure-note">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 6V4a4 4 0 018 0v2M2 6h10v7H2V6z" stroke="#6f7e62" stroke-width="1.2"/></svg>
+          Encrypted via Stripe · No card data is stored
+        </div>
+        <div>
+          <button class="btn-secondary" data-back="3">← Back</button>
+          <button class="btn-primary" id="pay">Pay deposit & book</button>
+        </div>
+      </div>
+
+      <div class="step-panel" data-panel="5">
+        <div class="success">
+          <div class="check">✓</div>
+          <h3>Thank you.</h3>
+          <p style="max-width: 28rem; margin: 0 auto; color: var(--moss);">Your consultation is reserved. We've sent a confirmation to <strong id="conf-email">your email</strong> with a calendar invite and a short questionnaire.</p>
+          <p style="font-size: 0.8rem; color: var(--terracotta); margin-top: 2rem; letter-spacing: 0.16em; text-transform: uppercase;">Reference · <span id="conf-id">HH-00000</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Hollow <em>&</em> Hedge</div>
+      <p style="opacity: 0.75; max-width: 24rem; line-height: 1.6; font-size: 0.95rem;">A landscape studio working across southern Alberta and the Crowsnest Pass since 2014.</p>
+    </div>
+    <div>
+      <h5>Studio</h5>
+      <ul><li>21 Bridge Avenue</li><li>Crowsnest Pass, AB T0K 0E0</li><li>By appointment</li></ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul><li><a href="mailto:studio@hollowandhedge.example">studio@hollowandhedge</a></li><li><a href="tel:4035550140">(403) 555-0140</a></li></ul>
+    </div>
+    <div>
+      <h5>Elsewhere</h5>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Journal</a></li><li><a href="#">Newsletter</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Hollow & Hedge Landscape Studio</span>
+    <span>Site by the studio · <a href="#">Privacy</a> · <a href="#">Accessibility</a></span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const state = {
+    step: 1, service: null, serviceName: null, price: 0, date: null,
+    calMonth: new Date().getMonth(), calYear: new Date().getFullYear(),
+  };
+
+  function goStep(n) {
+    state.step = n;
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.toggle('active', +p.dataset.panel === n));
+    document.querySelectorAll('.step-bar .step').forEach(s => {
+      const num = +s.dataset.step;
+      s.classList.toggle('active', num === n);
+      s.classList.toggle('done', num < n);
+    });
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.querySelectorAll('.opt').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+      b.classList.add('selected');
+      state.service = b.dataset.svc;
+      state.serviceName = b.querySelector('h5').textContent;
+      state.price = +b.dataset.price;
+      document.getElementById('next-1').disabled = false;
+    });
+  });
+  document.getElementById('next-1').addEventListener('click', () => { goStep(2); renderCal(); });
+
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function renderCal() {
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';
+    document.getElementById('cal-month').textContent = `${monthNames[state.calMonth]} ${state.calYear}`;
+    ['S','M','T','W','T','F','S'].forEach(d => {
+      const e = document.createElement('div');
+      e.className = 'dow'; e.textContent = d; grid.appendChild(e);
+    });
+    const first = new Date(state.calYear, state.calMonth, 1).getDay();
+    const days = new Date(state.calYear, state.calMonth + 1, 0).getDate();
+    const today = new Date(); today.setHours(0,0,0,0);
+    for (let i = 0; i < first; i++) {
+      const e = document.createElement('div'); e.className = 'cal-day empty'; grid.appendChild(e);
+    }
+    for (let d = 1; d <= days; d++) {
+      const dt = new Date(state.calYear, state.calMonth, d);
+      const dow = dt.getDay();
+      const btn = document.createElement('button');
+      btn.className = 'cal-day'; btn.textContent = d;
+      if (dt < today || dow === 0 || dow === 6 || dow === 1) {
+        btn.classList.add('disabled'); btn.disabled = true;
+      }
+      if (dt.getTime() === today.getTime()) btn.classList.add('today');
+      if (state.date && dt.getTime() === state.date.getTime()) btn.classList.add('selected');
+      btn.addEventListener('click', () => {
+        state.date = dt; renderCal();
+        document.getElementById('next-2').disabled = false;
+      });
+      grid.appendChild(btn);
+    }
+  }
+  document.getElementById('prev-month').addEventListener('click', () => {
+    state.calMonth--;
+    if (state.calMonth < 0) { state.calMonth = 11; state.calYear--; }
+    renderCal();
+  });
+  document.getElementById('next-month').addEventListener('click', () => {
+    state.calMonth++;
+    if (state.calMonth > 11) { state.calMonth = 0; state.calYear++; }
+    renderCal();
+  });
+  document.getElementById('next-2').addEventListener('click', () => goStep(3));
+
+  document.getElementById('next-3').addEventListener('click', () => {
+    const required = ['fn','ln','em','ph','addr'];
+    let ok = true;
+    required.forEach(id => {
+      const f = document.getElementById(id);
+      if (!f.value.trim()) { f.style.borderBottomColor = '#b8553a'; ok = false; }
+      else { f.style.borderBottomColor = ''; }
+    });
+    if (!ok) return;
+    document.getElementById('sum-svc').textContent = state.serviceName;
+    document.getElementById('sum-price').textContent = `$${state.price}`;
+    document.getElementById('sum-total').textContent = `$${state.price}`;
+    const opts = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+    document.getElementById('sum-date').textContent = state.date.toLocaleDateString('en-US', opts);
+    goStep(4);
+  });
+
+  document.querySelectorAll('[data-back]').forEach(b => {
+    b.addEventListener('click', () => goStep(+b.dataset.back));
+  });
+
+  document.getElementById('card').addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim();
+    e.target.value = v;
+  });
+  document.getElementById('exp').addEventListener('input', (e) => {
+    let v = e.target.value.replace(/\D/g,'');
+    if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2,4);
+    e.target.value = v;
+  });
+
+  document.getElementById('pay').addEventListener('click', () => {
+    const card = document.getElementById('card').value.replace(/\s/g,'');
+    const exp = document.getElementById('exp').value;
+    const cvc = document.getElementById('cvc').value;
+    const name = document.getElementById('cardname').value;
+    if (card.length < 13 || !exp || cvc.length < 3 || !name.trim()) {
+      alert('Please complete the card details. (Demo — no real charge occurs.)');
+      return;
+    }
+    const btn = document.getElementById('pay');
+    btn.textContent = 'Processing…'; btn.disabled = true;
+    setTimeout(() => {
+      const ref = 'HH-' + Math.floor(10000 + Math.random() * 90000);
+      document.getElementById('conf-id').textContent = ref;
+      document.getElementById('conf-email').textContent = document.getElementById('em').value;
+      goStep(5);
+    }, 1400);
+  });
+</script>
+
+</body>
+</html>
